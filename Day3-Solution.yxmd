@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="105">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="582" y="630" width="1488" height="204" />
+        <Position x="462" y="570" width="1488" height="204" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -23,7 +23,7 @@
     </Node>
     <Node ToolID="104">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="582" y="486" width="828" height="120" />
+        <Position x="462" y="426" width="828" height="120" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -43,7 +43,7 @@
     </Node>
     <Node ToolID="103">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="582" y="258" width="1488" height="204" />
+        <Position x="462" y="198" width="1488" height="204" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -63,7 +63,7 @@
     </Node>
     <Node ToolID="102">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="582" y="114" width="828" height="120" />
+        <Position x="462" y="54" width="828" height="120" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -83,12 +83,12 @@
     </Node>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="174" y="510" />
+        <Position x="54" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day3-Starter.csv</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\Day3-Starter.csv</File>
           <FormatSpecificOptions>
             <CodePage>28591</CodePage>
             <Delimeter>,</Delimeter>
@@ -105,9 +105,6 @@
           <DefaultAnnotationText>Day3-Starter.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day3-Starter.csv" type="V_String" />
@@ -118,12 +115,12 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="174" y="138" />
+        <Position x="54" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day3-Sample.csv</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\Day3-Sample.csv</File>
           <FormatSpecificOptions>
             <CodePage>28591</CodePage>
             <Delimeter>,</Delimeter>
@@ -140,9 +137,6 @@
           <DefaultAnnotationText>Day3-Sample.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day3-Sample.csv" type="V_String" />
@@ -153,7 +147,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="702" y="138" />
+        <Position x="582" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -185,7 +179,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="354" y="138" />
+        <Position x="234" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -205,7 +199,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="798" y="138" />
+        <Position x="678" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -231,7 +225,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="270" y="138" />
+        <Position x="150" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -252,7 +246,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="894" y="138" />
+        <Position x="774" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -273,7 +267,7 @@
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="990" y="138" />
+        <Position x="870" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -293,7 +287,7 @@
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="438" y="162" />
+        <Position x="318" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -311,7 +305,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="510" y="138" />
+        <Position x="390" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -336,7 +330,7 @@
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1086" y="138" />
+        <Position x="966" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -357,7 +351,7 @@
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1182" y="138" />
+        <Position x="1062" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -376,7 +370,7 @@
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="606" y="138" />
+        <Position x="486" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -395,7 +389,7 @@
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1290" y="138" />
+        <Position x="1170" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -415,7 +409,7 @@
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="990" y="294" />
+        <Position x="870" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -437,7 +431,7 @@
     </Node>
     <Node ToolID="41">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="702" y="294" />
+        <Position x="582" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -469,7 +463,7 @@
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="798" y="294" />
+        <Position x="678" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -495,7 +489,7 @@
     </Node>
     <Node ToolID="55">
       <GuiSettings>
-        <Position x="1086" y="294" />
+        <Position x="966" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -509,15 +503,12 @@ Column Number=Column Number
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro=".\Day3-O2-Macro.yxmc" />
     </Node>
     <Node ToolID="59">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1218" y="318" />
+        <Position x="1098" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -536,7 +527,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="60">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="1410" y="306" />
+        <Position x="1290" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -569,7 +560,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="61">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1506" y="366" />
+        <Position x="1386" y="306" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -587,7 +578,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="62">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1602" y="306" />
+        <Position x="1482" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -612,7 +603,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="63">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1698" y="306" />
+        <Position x="1578" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -632,7 +623,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="64">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1794" y="306" />
+        <Position x="1674" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -651,7 +642,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="66">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="1878" y="306" />
+        <Position x="1758" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -675,7 +666,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="67">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1998" y="306" />
+        <Position x="1878" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -693,7 +684,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="73">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
-        <Position x="1314" y="318" />
+        <Position x="1194" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -711,7 +702,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="74">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="702" y="510" />
+        <Position x="582" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -743,7 +734,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="75">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="354" y="510" />
+        <Position x="234" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -763,7 +754,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="76">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="798" y="510" />
+        <Position x="678" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -789,7 +780,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="77">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="270" y="510" />
+        <Position x="150" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -810,7 +801,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="78">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="894" y="510" />
+        <Position x="774" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -831,7 +822,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="79">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="990" y="510" />
+        <Position x="870" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -851,7 +842,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="80">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="438" y="534" />
+        <Position x="318" y="474" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -869,7 +860,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="81">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="510" y="510" />
+        <Position x="390" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -894,7 +885,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="82">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1086" y="510" />
+        <Position x="966" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -915,7 +906,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="83">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1182" y="510" />
+        <Position x="1062" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -934,7 +925,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="84">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="606" y="510" />
+        <Position x="486" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -953,7 +944,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="85">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1290" y="510" />
+        <Position x="1170" y="450" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -973,7 +964,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="86">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="990" y="666" />
+        <Position x="870" y="606" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -995,7 +986,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="87">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="702" y="666" />
+        <Position x="582" y="606" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1027,7 +1018,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="88">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="798" y="666" />
+        <Position x="678" y="606" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1053,7 +1044,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="89">
       <GuiSettings>
-        <Position x="1086" y="666" />
+        <Position x="966" y="606" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1072,7 +1063,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="90">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1218" y="690" />
+        <Position x="1098" y="630" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1091,7 +1082,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="91">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="1410" y="678" />
+        <Position x="1290" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1124,7 +1115,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="92">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1506" y="738" />
+        <Position x="1386" y="678" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1142,7 +1133,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="93">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1602" y="678" />
+        <Position x="1482" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1167,7 +1158,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="94">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1698" y="678" />
+        <Position x="1578" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1187,7 +1178,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="95">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1794" y="678" />
+        <Position x="1674" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1206,7 +1197,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="96">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="1878" y="678" />
+        <Position x="1758" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1230,7 +1221,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="97">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1998" y="678" />
+        <Position x="1878" y="618" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1248,7 +1239,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="99">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
-        <Position x="1314" y="690" />
+        <Position x="1194" y="630" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1266,7 +1257,7 @@ Value = [Binary Representa...</DefaultAnnotationText>
     </Node>
     <Node ToolID="100">
       <GuiSettings>
-        <Position x="1086" y="762" />
+        <Position x="966" y="702" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1285,7 +1276,7 @@ Column Number=Column Number
     </Node>
     <Node ToolID="101">
       <GuiSettings>
-        <Position x="1086" y="390" />
+        <Position x="966" y="330" />
       </GuiSettings>
       <Properties>
         <Configuration>

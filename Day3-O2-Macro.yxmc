@@ -6,6 +6,7 @@
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -15,7 +16,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="894" y="270" />
+        <Position x="822" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -45,7 +46,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="990" y="270" />
+        <Position x="918" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -74,7 +75,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="702" y="270" />
+        <Position x="630" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -97,7 +98,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="798" y="270" />
+        <Position x="726" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -131,7 +132,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="1278" y="270" />
+        <Position x="1206" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -201,7 +202,7 @@
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1182" y="270" />
+        <Position x="1110" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -234,7 +235,7 @@
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1374" y="270" />
+        <Position x="1302" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -295,7 +296,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="1470" y="270" />
+        <Position x="1398" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -330,7 +331,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="606" y="270" />
+        <Position x="534" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -378,7 +379,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="1086" y="270" />
+        <Position x="1014" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -444,7 +445,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="378" y="414" />
+        <Position x="306" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -467,7 +468,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="510" y="270" />
+        <Position x="438" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -500,7 +501,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="270" y="270" />
+        <Position x="198" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -529,7 +530,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="126" y="270" />
+        <Position x="54" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -541,7 +542,7 @@ Column Number - Ascending</DefaultAnnotationText>
           <FileInput>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day3-MacroInput2.yxdb</File>
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">.\Day3-MacroInput2.yxdb</File>
               <FormatSpecificOptions />
             </Configuration>
           </FileInput>
@@ -549,11 +550,8 @@ Column Number - Ascending</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText>Day3-MacroInput2.yxdb</DefaultAnnotationText>
-          <Left value="False" />
+          <Left value="True" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="RecordID" source="RecordID: Starting Value=1" type="Int16" />
@@ -566,7 +564,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1674" y="270" />
+        <Position x="1602" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -603,7 +601,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1578" y="270" />
+        <Position x="1506" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -626,7 +624,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1782" y="270" />
+        <Position x="1710" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -682,7 +680,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="2082" y="306" />
+        <Position x="2010" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -699,7 +697,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="2082" y="234" />
+        <Position x="2010" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -716,7 +714,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1974" y="306" />
+        <Position x="1902" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -746,7 +744,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1974" y="234" />
+        <Position x="1902" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -776,7 +774,7 @@ Column Number - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1878" y="306" />
+        <Position x="1806" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1023,6 +1021,7 @@ Column Number - Ascending</DefaultAnnotationText>
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
+        <Tool ToolId="17" Selected="True" />
         <Tool ToolId="26" Selected="True" />
         <Tool ToolId="27" Selected="True" />
       </Wiz_OpenOutputTools>

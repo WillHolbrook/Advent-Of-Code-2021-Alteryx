@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="342" y="498" width="252" height="108" />
+        <Position x="354" y="510" width="252" height="108" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -23,7 +23,7 @@
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="342" y="186" width="252" height="108" />
+        <Position x="354" y="198" width="252" height="108" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -43,7 +43,7 @@
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="342" y="42" width="252" height="108" />
+        <Position x="354" y="54" width="252" height="108" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -63,12 +63,12 @@
     </Node>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="66" />
+        <Position x="66" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day1-Starter.csv</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\Day1-Starter.csv</File>
           <FormatSpecificOptions>
             <CodePage>28591</CodePage>
             <Delimeter>,</Delimeter>
@@ -85,9 +85,6 @@
           <DefaultAnnotationText>Day1-Starter.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day1-Starter.csv" type="V_String" />
@@ -98,7 +95,7 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="366" y="66" />
+        <Position x="378" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -124,7 +121,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="174" y="66" />
+        <Position x="186" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -144,7 +141,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="270" y="66" />
+        <Position x="282" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -165,7 +162,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="498" y="66" />
+        <Position x="510" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -183,7 +180,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="366" y="210" />
+        <Position x="378" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -210,12 +207,12 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="42" y="378" />
+        <Position x="54" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day1-Sample.csv</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">.\Day1-Sample.csv</File>
           <FormatSpecificOptions>
             <CodePage>28591</CodePage>
             <Delimeter>,</Delimeter>
@@ -232,9 +229,6 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
           <DefaultAnnotationText>Day1-Sample.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day1-Sample.csv" type="V_String" />
@@ -245,7 +239,7 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="498" y="210" />
+        <Position x="510" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -263,7 +257,7 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="342" y="354" width="252" height="108" />
+        <Position x="354" y="366" width="252" height="108" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -283,7 +277,7 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="366" y="378" />
+        <Position x="378" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -309,7 +303,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="174" y="378" />
+        <Position x="186" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -329,7 +323,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="270" y="378" />
+        <Position x="282" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -350,7 +344,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="498" y="378" />
+        <Position x="510" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -368,7 +362,7 @@ ELSE 0 ENDIF</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="366" y="522" />
+        <Position x="378" y="534" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -395,7 +389,7 @@ ELSEIF [Row-3:Field_1]+[Row...</DefaultAnnotationText>
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="498" y="522" />
+        <Position x="510" y="534" />
       </GuiSettings>
       <Properties>
         <Configuration>
