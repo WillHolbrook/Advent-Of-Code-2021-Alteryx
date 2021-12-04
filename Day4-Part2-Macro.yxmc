@@ -1,0 +1,890 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Iterative Input</Name>
+          <Abbrev>i</Abbrev>
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">.\Day4-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day4-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Order]&lt;=[Engine.IterationNumber]+1 THEN 1 ELSE 0 ENDIF" field="Higlighted" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Higlighted = IF [Order]<=[Engine.IterationNumber]+1 THEN 1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Higlighted" source="Formula: IF [Order]&lt;=[Engine.IterationNumber]+1 THEN 1 ELSE 0 ENDIF" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="414" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Puzzle Number" action="GroupBy" rename="Puzzle Number" />
+            <SummarizeField field="Column Number" action="GroupBy" rename="Column Number" />
+            <SummarizeField field="Higlighted" action="Sum" rename="Sum_Higlighted" />
+            <SummarizeField field="Columns Per Puzzle" action="First" rename="First_Columns Per Puzzle" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Summarize: GroupBy - Column Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Column Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="414" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Puzzle Number" action="GroupBy" rename="Puzzle Number" />
+            <SummarizeField field="Row Number" action="GroupBy" rename="Row Number" />
+            <SummarizeField field="Higlighted" action="Sum" rename="Sum_Higlighted" />
+            <SummarizeField field="Rows Per Puzzle" action="First" rename="First_Rows Per Puzzle" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Summarize: GroupBy - Row Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Row Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Sum_Higlighted]=[First_Columns Per Puzzle]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-04 10:10:28</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-04 10:10:28</StartDate>
+              <EndDate>2021-12-04 10:10:28</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Sum_Higlighted]=[First_Columns Per Puzzle]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Summarize: GroupBy - Column Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Column Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Summarize: GroupBy - Column Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Column Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Sum_Higlighted]=[First_Rows Per Puzzle]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-04 10:11:16</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-04 10:11:16</StartDate>
+              <EndDate>2021-12-04 10:11:16</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Sum_Higlighted]=[First_Rows Per Puzzle]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Summarize: GroupBy - Row Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Row Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Summarize: GroupBy - Row Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="Asc" />
+            <Field field="Row Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="894" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Ignore</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Summarize: GroupBy - Column Number" type="Int32" />
+            <Field name="Sum_Higlighted" source="Summarize: Sum - Higlighted" type="Int64" />
+            <Field name="First_Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Summarize: GroupBy - Row Number" type="Int32" />
+            <Field name="First_Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1002" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Puzzle Number" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1134" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Puzzle Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Puzzle Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Puzzle Number" selected="False" rename="Right_Puzzle Number" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Puzzle Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Puzzle Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1578" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1482" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1578" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1338" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]+1&#xA;" field="Final Order" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Final Order = [Engine.IterationNumber]+1
+
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Field_1]) THEN [Row-1:Puzzle Number]+1 ELSE [Row-1:Puzzle Number] ENDIF" name="Puzzle Number" source="Summarize: GroupBy - Puzzle Number" type="Int32" />
+            <Field name="Unique ID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Value" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day4-Sample.csv" type="Int32" />
+            <Field name="Rows Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Columns Per Puzzle" source="Summarize: Count" type="Int64" />
+            <Field name="Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Real Row Number]+1" name="Row Number" source="Formula: [Row-1:Real Row Number]+1" type="Int32" />
+            <Field name="Back Diagonal" source="Formula: IF [Row Number]=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Forward Diagonal" source="Formula: IF ([Rows Per Puzzle]-[Row Number]+1)=[Column Number] THEN 1 ELSE 0 ENDIF" type="Bool" />
+            <Field name="Final Order" source="Formula: [Engine.IterationNumber]+1&#xA;" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Puzzle Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="378" y="54" width="136.1368" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Diagonals</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="402" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Back Diagonal] = 1</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsTrue</Operator>
+                <Field>Back Diagonal</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-04 10:06:07</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-04 10:06:07</StartDate>
+                  <EndDate>2021-12-04 10:06:07</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Back Diagonal] = 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="402" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Forward Diagonal] = 1</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsTrue</Operator>
+                <Field>Forward Diagonal</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-04 10:06:23</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-04 10:06:23</StartDate>
+                  <EndDate>2021-12-04 10:06:23</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Forward Diagonal] = 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="534" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Puzzle Number" action="GroupBy" rename="Puzzle Number" />
+                <SummarizeField field="Higlighted" action="Sum" rename="Sum_Higlighted" />
+                <SummarizeField field="Rows Per Puzzle" action="First" rename="First_Rows Per Puzzle" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="534" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Puzzle Number" action="GroupBy" rename="Puzzle Number" />
+                <SummarizeField field="Higlighted" action="Sum" rename="Sum_Higlighted" />
+                <SummarizeField field="Rows Per Puzzle" action="First" rename="First_Rows Per Puzzle" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="642" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Sum_Higlighted]=[First_Rows Per Puzzle]</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-04 10:11:52</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-04 10:11:52</StartDate>
+                  <EndDate>2021-12-04 10:11:52</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Sum_Higlighted]=[First_Rows Per Puzzle]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="642" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Sum_Higlighted]=[First_Rows Per Puzzle]</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-04 10:12:32</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-04 10:12:32</StartDate>
+                  <EndDate>2021-12-04 10:12:32</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Sum_Higlighted]=[First_Rows Per Puzzle]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="10" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="22" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="23" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Right" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="True" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day4-Part2-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (1)</Name>
+          <ToolId value="1" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (20)</Description>
+              <Name>Macro Output (14)</Name>
+              <ToolId value="14" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (22)</Description>
+              <Name>Macro Output (16)</Name>
+              <ToolId value="16" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Iterative Input</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="14" Selected="True" />
+        <Tool ToolId="16" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
