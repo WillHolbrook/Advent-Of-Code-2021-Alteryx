@@ -1,0 +1,748 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="366" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day6-Sample.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv" type="V_String" />
+            <Field name="Field_2" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv" type="V_String" />
+            <Field name="Field_3" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv" type="V_String" />
+            <Field name="Field_4" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv" type="V_String" />
+            <Field name="Field_5" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Sample.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="366" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day6-Starter.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_2" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_3" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_4" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_5" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_6" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_7" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_8" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_9" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_10" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_11" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_12" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_13" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_14" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_15" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_16" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_17" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_18" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_19" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_20" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_21" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_22" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_23" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_24" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_25" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_26" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_27" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_28" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_29" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_30" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_31" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_32" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_33" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_34" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_35" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_36" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_37" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_38" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_39" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_40" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_41" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_42" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_43" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_44" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_45" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_46" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_47" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_48" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_49" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_50" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_51" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_52" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_53" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_54" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_55" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_56" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_57" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_58" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_59" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_60" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_61" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_62" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_63" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_64" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_65" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_66" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_67" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_68" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_69" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_70" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_71" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_72" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_73" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_74" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_75" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_76" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_77" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_78" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_79" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_80" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_81" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_82" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_83" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_84" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_85" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_86" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_87" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_88" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_89" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_90" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_91" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_92" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_93" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_94" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_95" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_96" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_97" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_98" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_99" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_100" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_101" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_102" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_103" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_104" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_105" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_106" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_107" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_108" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_109" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_110" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_111" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_112" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_113" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_114" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_115" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_116" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_117" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_118" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_119" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_120" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_121" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_122" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_123" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_124" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_125" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_126" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_127" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_128" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_129" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_130" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_131" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_132" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_133" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_134" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_135" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_136" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_137" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_138" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_139" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_140" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_141" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_142" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_143" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_144" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_145" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_146" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_147" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_148" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_149" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_150" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_151" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_152" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_153" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_154" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_155" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_156" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_157" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_158" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_159" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_160" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_161" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_162" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_163" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_164" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_165" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_166" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_167" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_168" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_169" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_170" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_171" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_172" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_173" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_174" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_175" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_176" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_177" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_178" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_179" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_180" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_181" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_182" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_183" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_184" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_185" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_186" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_187" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_188" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_189" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_190" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_191" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_192" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_193" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_194" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_195" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_196" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_197" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_198" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_199" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_200" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_201" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_202" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_203" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_204" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_205" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_206" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_207" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_208" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_209" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_210" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_211" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_212" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_213" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_214" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_215" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_216" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_217" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_218" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_219" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_220" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_221" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_222" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_223" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_224" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_225" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_226" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_227" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_228" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_229" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_230" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_231" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_232" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_233" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_234" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_235" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_236" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_237" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_238" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_239" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_240" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_241" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_242" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_243" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_244" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_245" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_246" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_247" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_248" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_249" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_250" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_251" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_252" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_253" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_254" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_255" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_256" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_257" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_258" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_259" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_260" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_261" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_262" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_263" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_264" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_265" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_266" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_267" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_268" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_269" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_270" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_271" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_272" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_273" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_274" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_275" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_276" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_277" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_278" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_279" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_280" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_281" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_282" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_283" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_284" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_285" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_286" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_287" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_288" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_289" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_290" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_291" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_292" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_293" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_294" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_295" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_296" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_297" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_298" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_299" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+            <Field name="Field_300" size="254" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Starter.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="486" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields />
+          <DataFields>
+            <Field field="Field_1" selected="True" />
+            <Field field="Field_2" selected="True" />
+            <Field field="Field_3" selected="True" />
+            <Field field="Field_4" selected="True" />
+            <Field field="Field_5" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="618" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="False" />
+            <SelectField field="Value" selected="True" rename="Days Till Spawn" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="750" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Days Till Spawn" action="GroupBy" rename="Days Till Spawn" />
+            <SummarizeField field="Days Till Spawn" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings>
+        <Position x="870" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Num Iterations">80</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Part1-Macro.yxmc" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1002" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="486" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields />
+          <DataFields>
+            <Field field="Field_1" selected="True" />
+            <Field field="Field_2" selected="True" />
+            <Field field="Field_3" selected="True" />
+            <Field field="Field_4" selected="True" />
+            <Field field="Field_5" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="618" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="False" />
+            <SelectField field="Value" selected="True" rename="Days Till Spawn" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="750" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Days Till Spawn" action="GroupBy" rename="Days Till Spawn" />
+            <SummarizeField field="Days Till Spawn" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings>
+        <Position x="870" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Num Iterations">80</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Part1-Macro.yxmc" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1002" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings>
+        <Position x="870" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Num Iterations">256</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Part1-Macro.yxmc" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1002" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings>
+        <Position x="870" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Num Iterations">256</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day6-Part1-Macro.yxmc" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1002" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Count" action="Sum" rename="Sum_Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="38" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Final Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="36" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Final Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Final Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Final Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day6-Solution</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
