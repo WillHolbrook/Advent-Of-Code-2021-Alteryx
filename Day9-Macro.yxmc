@@ -1,0 +1,1577 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="246" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>All Input</Name>
+          <Abbrev>A</Abbrev>
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-MacroInput2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day9-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="246" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Iterative Input</Name>
+          <Abbrev>I</Abbrev>
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day9-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="414" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Right_Column Number" selected="True" rename="Left_Right_Column Number" input="Left_" />
+                <SelectField field="Right_Row Number" selected="True" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Height" selected="True" rename="Right_Height" input="Right_" />
+                <SelectField field="Right_Column Number" selected="True" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Row Above" selected="True" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="True" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="True" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="True" rename="Right_Column Right" input="Right_" />
+                <SelectField field="Right_Height Above" selected="True" rename="Right_Height Above" input="Right_" />
+                <SelectField field="Right_Height Below" selected="True" rename="Right_Height Below" input="Right_" />
+                <SelectField field="Right_Height Left" selected="True" rename="Right_Height Left" input="Right_" />
+                <SelectField field="Right_Height Right" selected="True" rename="Right_Height Right" input="Right_" />
+                <SelectField field="Right_Right_Column Number" selected="True" rename="Right_Right_Column Number" input="Right_" />
+                <SelectField field="Right_Low Point" selected="True" rename="Right_Low Point" input="Right_" />
+                <SelectField field="Right_Risk Value" selected="True" rename="Right_Risk Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Right_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Right_Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Right_Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Right_Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Right_Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Right_Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Right_Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Right_Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Right_Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Right_Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Right_Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="534" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Height Above]!=10000000000&amp;&amp;[Height Above]!=9</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-09 14:18:21</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-09 14:18:21</StartDate>
+              <EndDate>2021-12-09 14:18:21</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Height Above]!=10000000000&amp;&amp;[Height Above]!=9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="534" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Height Below]!=10000000000&amp;&amp;[Height Below]!=9</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-09 14:19:26</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-09 14:19:26</StartDate>
+              <EndDate>2021-12-09 14:19:26</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Height Below]!=10000000000&amp;&amp;[Height Below]!=9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="534" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Height Left]!=10000000000&amp;&amp;[Height Left]!=9</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-09 14:20:13</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-09 14:20:13</StartDate>
+              <EndDate>2021-12-09 14:20:13</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Height Left]!=10000000000&amp;&amp;[Height Left]!=9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="534" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Height Right]!=10000000000&amp;&amp;[Height Right]!=9</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-09 14:20:13</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-09 14:20:13</StartDate>
+              <EndDate>2021-12-09 14:20:13</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Height Right]!=10000000000&amp;&amp;[Height Right]!=9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="654" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Above" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Height" selected="False" rename="Right_Height" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="Right_Height Above" selected="False" rename="Right_Height Above" input="Right_" />
+                <SelectField field="Right_Height Below" selected="False" rename="Right_Height Below" input="Right_" />
+                <SelectField field="Right_Height Left" selected="False" rename="Right_Height Left" input="Right_" />
+                <SelectField field="Right_Height Right" selected="False" rename="Right_Height Right" input="Right_" />
+                <SelectField field="Right_Right_Column Number" selected="False" rename="Right_Right_Column Number" input="Right_" />
+                <SelectField field="Right_Low Point" selected="False" rename="Right_Low Point" input="Right_" />
+                <SelectField field="Right_Risk Value" selected="False" rename="Right_Risk Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Above" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="654" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Below" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Height" selected="False" rename="Right_Height" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="Right_Height Above" selected="False" rename="Right_Height Above" input="Right_" />
+                <SelectField field="Right_Height Below" selected="False" rename="Right_Height Below" input="Right_" />
+                <SelectField field="Right_Height Left" selected="False" rename="Right_Height Left" input="Right_" />
+                <SelectField field="Right_Height Right" selected="False" rename="Right_Height Right" input="Right_" />
+                <SelectField field="Right_Right_Column Number" selected="False" rename="Right_Right_Column Number" input="Right_" />
+                <SelectField field="Right_Low Point" selected="False" rename="Right_Low Point" input="Right_" />
+                <SelectField field="Right_Risk Value" selected="False" rename="Right_Risk Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Below" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="654" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Left" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Height" selected="False" rename="Right_Height" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="Right_Height Above" selected="False" rename="Right_Height Above" input="Right_" />
+                <SelectField field="Right_Height Below" selected="False" rename="Right_Height Below" input="Right_" />
+                <SelectField field="Right_Height Left" selected="False" rename="Right_Height Left" input="Right_" />
+                <SelectField field="Right_Height Right" selected="False" rename="Right_Height Right" input="Right_" />
+                <SelectField field="Right_Right_Column Number" selected="False" rename="Right_Right_Column Number" input="Right_" />
+                <SelectField field="Right_Low Point" selected="False" rename="Right_Low Point" input="Right_" />
+                <SelectField field="Right_Risk Value" selected="False" rename="Right_Risk Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Left" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="654" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Right" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Height" selected="False" rename="Right_Height" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="Right_Height Above" selected="False" rename="Right_Height Above" input="Right_" />
+                <SelectField field="Right_Height Below" selected="False" rename="Right_Height Below" input="Right_" />
+                <SelectField field="Right_Height Left" selected="False" rename="Right_Height Left" input="Right_" />
+                <SelectField field="Right_Height Right" selected="False" rename="Right_Height Right" input="Right_" />
+                <SelectField field="Right_Right_Column Number" selected="False" rename="Right_Right_Column Number" input="Right_" />
+                <SelectField field="Right_Low Point" selected="False" rename="Right_Low Point" input="Right_" />
+                <SelectField field="Right_Risk Value" selected="False" rename="Right_Risk Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Right" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="786" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Error</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="894" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="Asc" />
+            <Field field="Column Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="Asc" />
+            <Field field="Column Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings>
+        <Position x="522" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings>
+        <Position x="414" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="630" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Count" selected="True" rename="Source_Count" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="738" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF" field="Finished" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Finished = IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Source_Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Finished" size="1073741823" source="Formula: IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="990" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Count" selected="False" input="Source_" />
+                <SelectField field="Source_Source_Count" selected="False" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Finished" size="1073741823" source="Formula: IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1098" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Finished] = "1"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Finished</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-09 14:33:48</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-09 14:33:48</StartDate>
+              <EndDate>2021-12-09 14:33:48</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Finished] = "1"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Finished" size="1073741823" source="Formula: IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Finished" size="1073741823" source="Formula: IF [Count]=[Source_Count] THEN 1 ELSE 0 ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1242" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1242" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>I</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1182" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="True" />
+          <SelectFields>
+            <SelectField field="Finished" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1182" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="True" />
+          <SelectFields>
+            <SelectField field="Finished" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Height" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day9-sample.csv" type="Int64" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+            <Field name="Height Above" source="Formula: IF IsNull([Height Above]) THEN 10000000000 ELSE [Height Above] ENDIF" type="Int64" />
+            <Field name="Height Below" source="Formula: IF IsNull([Height Below]) THEN 10000000000 ELSE [Height Below] ENDIf" type="Int64" />
+            <Field name="Height Left" source="Formula: IF IsNull([Height Left]) THEN 10000000000 ELSE [Height Left] ENDIF" type="Int64" />
+            <Field name="Height Right" source="Formula: IF IsNull([Height Right]) THEN 10000000000 ELSE [Height Right] ENDIF" type="Int64" />
+            <Field name="Low Point" source="Formula: IF [Height]&lt;[Height Above]&amp;&amp;[Height]&lt;[Height Below]&amp;&amp;[Height]&lt;[Height Left]&amp;&amp;[Height]&lt;[Height Right] THEN 1 ELSE 0 ENDIF" type="Int32" />
+            <Field name="Risk Value" source="Formula: [Height]+1" type="Int64" />
+            <Field name="Basin Number" source="RecordID: Starting Value=1" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="10" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="12" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="15" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="10" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="10" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Left" />
+      <Destination ToolID="12" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="12" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Unique" />
+      <Destination ToolID="19" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Unique" />
+      <Destination ToolID="16" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output9" />
+      <Destination ToolID="17" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output9" />
+      <Destination ToolID="17" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="False" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day9-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (21)</Name>
+              <ToolId value="21" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (22)</Name>
+              <ToolId value="22" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Iterative Input</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="15" Selected="True" />
+        <Tool ToolId="16" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+        <Tool ToolId="22" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
