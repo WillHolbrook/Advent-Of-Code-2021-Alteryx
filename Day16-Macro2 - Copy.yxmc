@@ -1,0 +1,1469 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="426" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Binary</Field>
+          <RegExExpression value="(.{3})(.{3})" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>Binary</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="Packet Version" type="V_String" size="2147483647" />
+            <Field field="Packet Type" type="V_String" size="2147483647" />
+          </ParseComplex>
+          <Match>
+            <Field>Binary_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field description="RegEx: Parsed from Binary" name="Packet Version" size="2147483647" source="RegEx: Parsed from Binary" type="V_String" />
+            <Field description="RegEx: Parsed from Binary" name="Packet Type" size="2147483647" source="RegEx: Parsed from Binary" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings>
+        <Position x="522" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Input.Binary"><![CDATA[Binary=Packet Version
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Decimal">
+          <RecordInfo>
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\BinaryToDecimal.yxmc" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings>
+        <Position x="522" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Input.Binary"><![CDATA[Binary=Packet Type
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Decimal">
+          <RecordInfo>
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\BinaryToDecimal.yxmc" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="618" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Decimal" selected="True" rename="Packet Type" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="618" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Decimal" selected="True" rename="Packet Version" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="714" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Packet Type" selected="False" rename="Source_Packet Type" input="Source_" />
+                <SelectField field="Source_Binary" selected="True" input="Source_" />
+                <SelectField field="Target_Packet Type" selected="True" input="Target_" />
+                <SelectField field="Source_Packet Version" selected="False" input="Source_" />
+                <SelectField field="Source_Packet ID" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="810" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Binary" selected="True" input="Source_" />
+                <SelectField field="Target_Packet Version" selected="True" input="Target_" />
+                <SelectField field="Source_Packet Type" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Version" selected="False" rename="Source_Packet Version" input="Source_" />
+                <SelectField field="Source_Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Packet ID Stack" selected="True" input="Source_" />
+                <SelectField field="Source_Parent Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Len Or Sub Packets" selected="True" input="Source_" />
+                <SelectField field="Source_Len Or Sub Packets2" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1002" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type]=4</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 09:29:20</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-16 09:29:20</StartDate>
+              <EndDate>2021-12-16 09:29:20</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type]=4</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-6)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-6)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1194" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Group], 4)" field="Group" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Group = Right([Group], 4)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber] (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field description="RegEx: Parsed from Binary" name="Group" size="2147483647" source="Formula: Right([Group], 4)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1290" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Group" action="Concat" rename="Literal Binary">
+              <Concat_Start />
+              <Separator />
+              <Concat_End />
+            </SummarizeField>
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber] (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Literal Binary" size="2147483647" source="Summarize: Concat - Group" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings>
+        <Position x="1386" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Input.Binary"><![CDATA[Binary=Literal Binary
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Decimal">
+          <RecordInfo>
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\BinaryToDecimal.yxmc" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1506" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Packet Version" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Type" selected="True" input="Source_" />
+                <SelectField field="Target_Decimal" selected="True" input="Target_" />
+                <SelectField field="Source_Literal Binary" selected="False" input="Source_" />
+                <SelectField field="Source_Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Parent Packet ID" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber] (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="906" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Binary], Length([Binary])-6)" field="Binary" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Binary = Right([Binary], Length([Binary])-6)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-6)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1098" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Left([Binary], 1)" field="Length Type ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="Right([Binary], Length([Binary])-1)" field="Binary" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Length Type ID = Left([Binary], 1)
+Binary = Right([Binary], Length([Binary])-1)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-1)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1194" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Length Type ID] = "0"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Length Type ID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 09:49:54</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-12-16 09:49:54</StartDate>
+              <EndDate>2021-12-16 09:49:54</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Length Type ID] = "0"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-1)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-1)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1290" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="15" field="Num Length Bits" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Num Length Bits = 15
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-1)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Num Length Bits" source="Formula: 15" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1290" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="11" field="Num Length Bits" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Num Length Bits = 11
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-1)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Num Length Bits" source="Formula: 11" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1482" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Left([Binary], [Num Length Bits])" field="Length Bin" size="1073741823" type="V_WString" />
+            <FormulaField expression="Right([Binary], Length([Binary])-[Num Length Bits])" field="Binary" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Length Bin = Left([Binary], [Num Length Bits])
+Binary = Right([Binary], Length([...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Num Length Bits" source="Formula: 15" type="Int16" />
+            <Field name="Length Bin" size="1073741823" source="Formula: Left([Binary], [Num Length Bits])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings>
+        <Position x="1602" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Input.Binary"><![CDATA[Binary=Length Bin
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Decimal">
+          <RecordInfo>
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\BinaryToDecimal.yxmc" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1710" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Binary" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Version" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Type" selected="True" input="Source_" />
+                <SelectField field="Source_Length Type ID" selected="True" input="Source_" />
+                <SelectField field="Target_Decimal" selected="True" rename="Length Of SubPackets" input="Target_" />
+                <SelectField field="Source_Num Length Bits" selected="False" input="Source_" />
+                <SelectField field="Source_Length Bin" selected="False" input="Source_" />
+                <SelectField field="Source_Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Parent Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Packet ID Stack" selected="True" input="Source_" />
+                <SelectField field="Source_Len Or Sub Packets" selected="True" input="Source_" />
+                <SelectField field="Source_Num Len Or Sub Packets" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Length Of SubPackets" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input24</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day16-MacroInput4.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day16-MacroInput4.yxdb</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings>
+        <Position x="1098" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Day16-Macro (9)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Remaining Binary">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-5) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber] (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Final Out">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber] (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field description="RegEx: Parsed from Binary" name="Group" size="2147483647" source="RegEx: Parsed from Binary (BatchMacro) (BatchMacro) (BatchMacro)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Iterative Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-5)" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\Day16-Macro.yxmc" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1962" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Packet Version" selected="True" />
+            <SelectField field="Packet Type" selected="True" />
+            <SelectField field="Packet ID" selected="True" />
+            <SelectField field="Parent Packet ID" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Packet ID" selected="True" rename="Parent Packet ID" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="294" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]" field="Packet ID" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Packet ID = [Engine.IterationNumber]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Summarize: Concat - Hex" type="V_String" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2598" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2502" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2286" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources)" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2286" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1482" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Packet Version" selected="False" />
+            <SelectField field="Packet Type" selected="False" />
+            <SelectField field="Packet ID" selected="False" />
+            <SelectField field="Packet ID Stack" selected="False" rename="Packet ID" />
+            <SelectField field="Parent Packet ID" selected="False" />
+            <SelectField field="Len Or Sub Packets" selected="False" />
+            <SelectField field="Num Len Or Sub Packets" selected="False" />
+            <SelectField field="Combined" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-5) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1482" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Left([Binary], [Num Length Bits])" field="Length Bin" size="1073741823" type="V_WString" />
+            <FormulaField expression="Right([Binary], Length([Binary])-[Num Length Bits])" field="Binary" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Length Bin = Left([Binary], [Num Length Bits])
+Binary = Right([Binary], Length([...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Num Length Bits" source="Formula: 11" type="Int16" />
+            <Field name="Length Bin" size="1073741823" source="Formula: Left([Binary], [Num Length Bits])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings>
+        <Position x="1602" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Input.Binary"><![CDATA[Binary=Length Bin
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Decimal">
+          <RecordInfo>
+            <Field name="Decimal" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\BinaryToDecimal.yxmc" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1710" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Binary" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Version" selected="True" input="Source_" />
+                <SelectField field="Source_Packet Type" selected="True" input="Source_" />
+                <SelectField field="Source_Length Type ID" selected="True" input="Source_" />
+                <SelectField field="Target_Decimal" selected="True" rename="Number Of SubPackets" input="Target_" />
+                <SelectField field="Source_Num Length Bits" selected="False" input="Source_" />
+                <SelectField field="Source_Length Bin" selected="False" input="Source_" />
+                <SelectField field="Source_Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Parent Packet ID" selected="True" input="Source_" />
+                <SelectField field="Source_Packet ID Stack" selected="True" input="Source_" />
+                <SelectField field="Source_Len Or Sub Packets" selected="True" input="Source_" />
+                <SelectField field="Source_Num Len Or Sub Packets" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Number Of SubPackets" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1830" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet Version" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet Type" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Length Type ID" size="1073741823" source="Formula: Left([Binary], 1)" type="V_WString" />
+            <Field name="Length Of SubPackets" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+            <Field name="Parent Packet ID" source="Formula: -1" type="Int64" />
+            <Field name="Number Of SubPackets" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1962" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Packet Version" selected="False" />
+            <SelectField field="Packet Type" selected="False" />
+            <SelectField field="Length Type ID" selected="False" />
+            <SelectField field="Length Of SubPackets" selected="False" />
+            <SelectField field="Parent Packet ID" selected="False" />
+            <SelectField field="Packet ID Stack" selected="False" />
+            <SelectField field="Len Or Sub Packets" selected="False" />
+            <SelectField field="Combined" selected="False" />
+            <SelectField field="Number Of SubPackets" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: Right([Binary], Length([Binary])-[Num Length Bits])" type="V_String" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2406" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!REGEX_Match([Binary], "0*")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Binary</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 13:32:06</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-16 13:32:06</StartDate>
+              <EndDate>2021-12-16 13:32:06</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!REGEX_Match([Binary], "0*")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Binary" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Packet ID" size="1073741823" source="Formula: [Engine.IterationNumber]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Binary" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Binary" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Decimal" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Decimal" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="26" Connection="Iterative Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="False" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Binary" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Decimal" />
+      <Destination ToolID="13" Connection="Targets" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="False" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Binary" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Decimal" />
+      <Destination ToolID="22" Connection="Targets" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Final Out" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Remaining Binary" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Binary" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="39" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Decimal" />
+      <Destination ToolID="39" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="True" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (30)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (31)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day16-Macro2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (25)</Name>
+          <ToolId value="25" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (24)</Name>
+              <ToolId value="24" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (30)</Description>
+              <Name>Macro Output (30)</Name>
+              <ToolId value="30" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (31)</Description>
+              <Name>Macro Output (31)</Name>
+              <ToolId value="31" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input24</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="500" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AutoByName</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="3" Selected="True" />
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+        <Tool ToolId="24" Selected="True" />
+        <Tool ToolId="26" Selected="True" />
+        <Tool ToolId="30" Selected="True" />
+        <Tool ToolId="31" Selected="True" />
+        <Tool ToolId="38" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

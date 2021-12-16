@@ -1,0 +1,2346 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="402" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day16-MacroInput5.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day16-MacroInput5.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="582" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>0</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="702" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[RecordID] = [Engine.IterationNumber]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>RecordID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:39:55</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-16 10:39:55</StartDate>
+              <EndDate>2021-12-16 10:39:55</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RecordID] = [Engine.IterationNumber]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="846" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([Decimal])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Decimal</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:40:35</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-16 10:40:35</StartDate>
+              <EndDate>2021-12-16 10:40:35</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Decimal])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1974" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2166" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2706" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>1</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 2</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 2</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 3</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>3</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 3</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 5</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>5</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 5</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 6</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>6</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 6</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Packet Type] = 7</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Packet Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 10:42:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>7</Operand>
+              <StartDate>2021-12-16 10:42:01</StartDate>
+              <EndDate>2021-12-16 10:42:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Packet Type] = 7</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="Sum" rename="Decimal" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Right_Decimal" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2070" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RecordID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1254" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>RecordID</UpdateField_Name>
+          <CreateField_Name>Running Product</CreateField_Name>
+          <CreateField_Type>Int64</CreateField_Type>
+          <CreateField_Size>8</CreateField_Size>
+          <OtherRows>NULL</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE [Row-1:Running Product]*[Right_Decimal] ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE [Row-1:Running Product]*[Right_Decimal] ENDIF" name="Running Product" source="Formula: IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE [Row-1:Running Product]*[Right_Decimal] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1374" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Running Product" action="Last" rename="Decimal" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE [Row-1:Running Product]*[Right_Decimal] ENDIF" name="Decimal" source="Formula: IF IsNull([Row-1:Running Product]) THEN [Right_Decimal] ELSE [Row-1:Running Product]*[Right_Decimal] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="Min" rename="Decimal" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="Max" rename="Decimal" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="First" rename="Last Sub Packet" />
+            <SummarizeField field="Right_Decimal" action="Last" rename="First Sub Packet" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1374" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [First Sub Packet]&gt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" field="Decimal" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Decimal = IF [First Sub Packet]>[Last Sub Packet] THEN 1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First Sub Packet]&gt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1506" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="First_Right_Decimal" selected="False" />
+            <SelectField field="Last_Right_Decimal" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First Sub Packet]&gt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="First" rename="Last Sub Packet" />
+            <SummarizeField field="Right_Decimal" action="Last" rename="First Sub Packet" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1374" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [First Sub Packet]&lt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" field="Decimal" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Decimal = IF [First Sub Packet]<[Last Sub Packet] THEN 1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First Sub Packet]&lt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1506" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="First_Right_Decimal" selected="False" />
+            <SelectField field="Last_Right_Decimal" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First Sub Packet]&lt;[Last Sub Packet] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1110" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Packet ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Packet ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Packet Version" selected="False" rename="Right_Packet Version" input="Right_" />
+                <SelectField field="Right_Packet Type" selected="False" rename="Right_Packet Type" input="Right_" />
+                <SelectField field="Right_Packet ID" selected="False" rename="Right_Packet ID" input="Right_" />
+                <SelectField field="Right_Parent Packet ID" selected="False" rename="Right_Parent Packet ID" input="Right_" />
+                <SelectField field="Right_Decimal" selected="True" rename="Right_Decimal" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Packet ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Packet ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1254" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="First" rename="RecordID" />
+            <SummarizeField field="Packet Version" action="First" rename="Packet Version" />
+            <SummarizeField field="Packet Type" action="First" rename="Packet Type" />
+            <SummarizeField field="Packet ID" action="First" rename="Packet ID" />
+            <SummarizeField field="Parent Packet ID" action="First" rename="Parent Packet ID" />
+            <SummarizeField field="Right_Decimal" action="First" rename="First_Right_Decimal" />
+            <SummarizeField field="Right_Decimal" action="Last" rename="Last_Right_Decimal" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="First_Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Last_Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1374" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [First_Right_Decimal]=[Last_Right_Decimal] THEN 1 ELSE 0 ENDIF" field="Decimal" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Decimal = IF [First_Right_Decimal]=[Last_Right_Decimal] THEN 1 ELSE 0 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="First_Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Last_Right_Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First_Right_Decimal]=[Last_Right_Decimal] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1506" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="First_Right_Decimal" selected="False" />
+            <SelectField field="Last_Right_Decimal" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Formula: IF [First_Right_Decimal]=[Last_Right_Decimal] THEN 1 ELSE 0 ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2490" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count]=[Engine.IterationNumber]+1</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-16 11:08:53</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-16 11:08:53</StartDate>
+              <EndDate>2021-12-16 11:08:53</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count]=[Engine.IterationNumber]+1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings>
+        <Position x="2262" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2358" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2706" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2622" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2622" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="(Multiple Sources)" type="Int64" />
+            <Field name="Last Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+            <Field name="First Sub Packet" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="522" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Packet Version" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet Type" source="Summarize: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Parent Packet ID" source="Formula: (Multiple Sources) (BatchMacro)" type="Int64" />
+            <Field name="Decimal" source="Summarize: Sum - Value (BatchMacro)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="389" y="385" width="178.5791" height="28" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 48</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="414" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="3" />
+              <Fields>
+                <Field name="Packet Version" />
+                <Field name="Packet Type" />
+                <Field name="Packet ID" />
+                <Field name="Parent Packet ID" />
+                <Field name="Decimal" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>3</c>
+                  <c>4</c>
+                  <c>234</c>
+                  <c>230</c>
+                  <c>36964816670</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>7</c>
+                  <c>231</c>
+                  <c>230</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>1</c>
+                  <c>230</c>
+                  <c>0</c>
+                  <c />
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Packet Version" source="TextInput:" type="Byte" />
+                <Field name="Packet Type" source="TextInput:" type="Byte" />
+                <Field name="Packet ID" source="TextInput:" type="Byte" />
+                <Field name="Parent Packet ID" source="TextInput:" type="Byte" />
+                <Field name="Decimal" source="TextInput:" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#2">
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#7">
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#8">
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#9">
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="True" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="29" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="29" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="33" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="True" />
+      <Destination ToolID="33" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="37" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="True" />
+      <Destination ToolID="37" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="42" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="43" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output9" />
+      <Destination ToolID="43" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Join" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Join" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Join" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="True" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="False" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (8)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (44)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day16-Macro3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (8)</Description>
+              <Name>Macro Output (8)</Name>
+              <ToolId value="8" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (44)</Description>
+              <Name>Macro Output (44)</Name>
+              <ToolId value="44" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input1</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="50000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="8" Selected="True" />
+        <Tool ToolId="42" Selected="True" />
+        <Tool ToolId="44" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

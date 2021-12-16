@@ -1,0 +1,2100 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="444.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Points</Name>
+          <Abbrev>P</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-MacroInput2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day15-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Iterative Input</Name>
+          <Abbrev>I</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day15-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="222" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Y]-1" field="Up" size="8" type="Int64" />
+            <FormulaField expression="[Y]+1" field="Down" size="8" type="Int64" />
+            <FormulaField expression="[X]-1" field="Left" size="8" type="Int64" />
+            <FormulaField expression="[X]+1" field="Right" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Up = [Y]-1
+Down = [Y]+1
+Left = [X]-1
+Right = [X]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="354" y="360.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Down" />
+            <Field field="X" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Y" />
+            <Field field="X" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Risk Level" selected="True" rename="Right_Risk Level" input="Right_" />
+                <SelectField field="Right_Y" selected="True" rename="Right_Y" input="Right_" />
+                <SelectField field="Right_X" selected="True" rename="Right_X" input="Right_" />
+                <SelectField field="Right_Tuple" selected="True" rename="Right_Tuple" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Down" />
+            <Field field="X" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+            <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Down" order="" />
+            <Field field="X" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Y" />
+            <Field field="X" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="354" y="660.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Right" />
+            <Field field="Y" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="X" />
+            <Field field="Y" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Risk Level" selected="True" rename="Right_Risk Level" input="Right_" />
+                <SelectField field="Right_Y" selected="True" rename="Right_Y" input="Right_" />
+                <SelectField field="Right_X" selected="True" rename="Right_X" input="Right_" />
+                <SelectField field="Right_Tuple" selected="True" rename="Right_Tuple" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Right" />
+            <Field field="Y" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+            <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Right" order="" />
+            <Field field="Y" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="X" />
+            <Field field="Y" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="486" y="360.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Risk Sum]+[Right_Risk Level]" field="Risk Sum" size="8" type="Int64" />
+            <FormulaField expression="[Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" field="Path" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Risk Sum = [Risk Sum]+[Right_Risk Level]
+Path = [Path]+[Right_Tuple]+ToString([R...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+            <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Down" order="" />
+            <Field field="X" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="630" y="360.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Risk Level" selected="False" />
+            <SelectField field="Y" selected="False" />
+            <SelectField field="X" selected="False" />
+            <SelectField field="Tuple" selected="False" />
+            <SelectField field="Up" selected="False" />
+            <SelectField field="Down" selected="False" />
+            <SelectField field="Left" selected="False" />
+            <SelectField field="Right" selected="False" />
+            <SelectField field="Right_Risk Level" selected="True" rename="Risk Level" />
+            <SelectField field="Right_Y" selected="True" rename="Y" />
+            <SelectField field="Right_X" selected="True" rename="X" />
+            <SelectField field="Right_Tuple" selected="True" rename="Tuple" />
+            <SelectField field="Path" selected="True" />
+            <SelectField field="Risk Sum" selected="True" />
+            <SelectField field="Min Current Path" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="630" y="660.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Risk Level" selected="False" />
+            <SelectField field="Y" selected="False" />
+            <SelectField field="X" selected="False" />
+            <SelectField field="Tuple" selected="False" />
+            <SelectField field="Up" selected="False" />
+            <SelectField field="Down" selected="False" />
+            <SelectField field="Left" selected="False" />
+            <SelectField field="Right" selected="False" />
+            <SelectField field="Right_Risk Level" selected="True" rename="Risk Level" />
+            <SelectField field="Right_Y" selected="True" rename="Y" />
+            <SelectField field="Right_X" selected="True" rename="X" />
+            <SelectField field="Right_Tuple" selected="True" rename="Tuple" />
+            <SelectField field="Path" selected="True" />
+            <SelectField field="Risk Sum" selected="True" />
+            <SelectField field="Min Current Path" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="798" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="930" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>REGEX_CountMatches([Path], "\"+[Tuple])=1</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-15 10:11:55</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-15 10:11:55</StartDate>
+              <EndDate>2021-12-15 10:11:55</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>REGEX_CountMatches([Path], "\"+[Tuple])=1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1038" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="2275" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="2281" y="143.9999" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="2407" y="137.9999" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3318" y="468.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3246" y="312.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="486" y="660.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Risk Sum]+[Right_Risk Level]" field="Risk Sum" size="8" type="Int64" />
+            <FormulaField expression="[Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" field="Path" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText>Risk Sum = [Risk Sum]+[Right_Risk Level]
+Path = [Path]+[Right_Tuple]+ToString([R...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+            <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+            <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+            <Field name="Left" source="Formula: [X]-1" type="Int64" />
+            <Field name="Right" source="Formula: [X]+1" type="Int64" />
+            <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Right" order="" />
+            <Field field="Y" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1134" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Risk Level" selected="False" input="Target_" />
+                <SelectField field="Target_Y" selected="False" input="Target_" />
+                <SelectField field="Target_X" selected="False" input="Target_" />
+                <SelectField field="Target_Path" selected="False" input="Target_" />
+                <SelectField field="Target_Min Current Path" selected="False" input="Target_" />
+                <SelectField field="Source_RecordID" selected="True" rename="Source_RecordID" input="Source_" />
+                <SelectField field="Source_Risk Level" selected="False" rename="Source_Risk Level" input="Source_" />
+                <SelectField field="Source_Y" selected="False" rename="Source_Y" input="Source_" />
+                <SelectField field="Source_X" selected="False" rename="Source_X" input="Source_" />
+                <SelectField field="Source_Tuple" selected="False" rename="Source_Tuple" input="Source_" />
+                <SelectField field="Source_Path" selected="True" rename="Source_Path" input="Source_" />
+                <SelectField field="Source_Risk Sum" selected="False" rename="Source_Risk Sum" input="Source_" />
+                <SelectField field="Source_Min Current Path" selected="False" rename="Source_Min Current Path" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Source_Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1242" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[RecordID]!=[Source_RecordID]&amp;&amp;REGEX_CountMatches([Source_Path], "\"+[Tuple])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-15 13:35:16</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-15 13:35:16</StartDate>
+              <EndDate>2021-12-15 13:35:16</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RecordID]!=[Source_RecordID]&amp;&amp;REGEX_CountMatches([Source_Path], "\"+[Tuple])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Source_Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Source_Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1350" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber(REGEX_Replace([Source_Path], &quot;.*\&quot;+[Tuple]+&quot;(\d+).*&quot;, &quot;$1&quot;))" field="Risk Sum at point Sum " size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Risk Sum at point Sum  = ToNumber(REGEX_Replace([Source_Path], ".*\"+[Tuple]+"(\...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Source_Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum at point Sum " source="Formula: ToNumber(REGEX_Replace([Source_Path], &quot;.*\&quot;+[Tuple]+&quot;(\d+).*&quot;, &quot;$1&quot;))" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1494" y="252.9999" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Source_Path" selected="False" />
+            <SelectField field="Source_Risk Level" selected="False" />
+            <SelectField field="Source_Y" selected="False" />
+            <SelectField field="Source_X" selected="False" />
+            <SelectField field="Source_Tuple" selected="False" />
+            <SelectField field="Source_Risk Sum" selected="False" />
+            <SelectField field="Source_Min Current Path" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Risk Sum at point Sum " source="Formula: ToNumber(REGEX_Replace([Source_Path], &quot;.*\&quot;+[Tuple]+&quot;(\d+).*&quot;, &quot;$1&quot;))" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1626" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" field="Path To Remove" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Path To Remove = IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [So...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Source_RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Risk Sum at point Sum " source="Formula: ToNumber(REGEX_Replace([Source_Path], &quot;.*\&quot;+[Tuple]+&quot;(\d+).*&quot;, &quot;$1&quot;))" type="Int64" />
+            <Field name="Path To Remove" source="Formula: IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1938" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Path To Remove" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Path To Remove" selected="False" input="Left_" />
+                <SelectField field="Left_RecordID" selected="False" input="Left_" />
+                <SelectField field="Left_Tuple" selected="False" input="Left_" />
+                <SelectField field="Left_Risk Sum" selected="False" input="Left_" />
+                <SelectField field="Left_Source_RecordID" selected="False" input="Left_" />
+                <SelectField field="Left_Risk Sum at point Sum " selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Path To Remove" source="Formula: IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Path To Remove" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+            <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+            <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+            <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+            <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+            <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1818" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Path To Remove" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Path To Remove" source="Formula: IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Path To Remove" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Path To Remove" source="Formula: IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Path To Remove" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1722" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="Tuple" selected="False" />
+            <SelectField field="Risk Sum" selected="False" />
+            <SelectField field="Source_RecordID" selected="False" />
+            <SelectField field="Risk Sum at point Sum " selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Path To Remove" source="Formula: IF [Risk Sum at point Sum ]=[Risk Sum] THEN Min([RecordID], [Source_RecordID])&#xA;ELSEIF [Risk Sum at point Sum ]&lt;[Risk Sum] THEN [RecordID] ELSE [Source_RecordID] ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2490" y="300.9999" width="748" height="361.0001" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 42</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="2515" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[X]=1234&amp;&amp;[Y]=10</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-15 10:16:07</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-15 10:16:07</StartDate>
+                  <EndDate>2021-12-15 10:16:07</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[X]=1234&amp;&amp;[Y]=10</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="RecordID" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="RecordID" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="2623" y="353.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Risk Sum" action="Min" rename="Min_Risk Sum" />
+                <SummarizeField field="Min Current Path" action="First" rename="First_Min Current Path" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Min_Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="First_Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2731" y="353.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Min([Min_Risk Sum], [First_Min Current Path])" field="Min Current Path" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Min Current Path = Min([Min_Risk Sum], [First_Min Current Path])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Min_Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="First_Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Min Current Path" source="Formula: Min([Min_Risk Sum], [First_Min Current Path])" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="2839" y="353.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Target_Min Current Path" selected="False" input="Target_" />
+                    <SelectField field="Source_Min_Risk Sum" selected="False" input="Source_" />
+                    <SelectField field="Source_First_Min Current Path" selected="False" input="Source_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: Min([Min_Risk Sum], [First_Min Current Path])" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="2839" y="485.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Source_Min_Risk Sum" selected="False" input="Source_" />
+                    <SelectField field="Source_First_Min Current Path" selected="False" input="Source_" />
+                    <SelectField field="Source_Min Current Path" selected="True" rename="Source_Min Current Path" input="Source_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Source_Min Current Path" source="Formula: Min([Min_Risk Sum], [First_Min Current Path])" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3127" y="485.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Risk Sum] &lt;= [Min Current Path]</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>&lt;</Operator>
+                <Field>Risk Sum</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-15 11:02:40</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-15 11:02:40</StartDate>
+                  <EndDate>2021-12-15 11:02:40</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Risk Sum] &lt;= [Min Current Path]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2935" y="485.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" field="Min Current Path" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Min Current Path = IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Source_Min Current Path" source="Formula: Min([Min_Risk Sum], [First_Min Current Path])" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3031" y="485.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="RecordID" selected="False" />
+                <SelectField field="Source_Min Current Path" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="329" y="415.9999" width="386" height="142" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 37</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="354" y="468.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Left" />
+                <Field field="Y" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="X" />
+                <Field field="Y" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Risk Level" selected="True" rename="Right_Risk Level" input="Right_" />
+                    <SelectField field="Right_Y" selected="True" rename="Right_Y" input="Right_" />
+                    <SelectField field="Right_X" selected="True" rename="Right_X" input="Right_" />
+                    <SelectField field="Right_Tuple" selected="True" rename="Right_Tuple" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="Left" />
+                <Field field="Y" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Join">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+                <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Left" order="" />
+                <Field field="Y" order="" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="X" />
+                <Field field="Y" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="631" y="473.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Risk Level" selected="False" />
+                <SelectField field="Y" selected="False" />
+                <SelectField field="X" selected="False" />
+                <SelectField field="Tuple" selected="False" />
+                <SelectField field="Up" selected="False" />
+                <SelectField field="Down" selected="False" />
+                <SelectField field="Left" selected="False" />
+                <SelectField field="Right" selected="False" />
+                <SelectField field="Right_Risk Level" selected="True" rename="Risk Level" />
+                <SelectField field="Right_Y" selected="True" rename="Y" />
+                <SelectField field="Right_X" selected="True" rename="X" />
+                <SelectField field="Right_Tuple" selected="True" rename="Tuple" />
+                <SelectField field="Path" selected="True" />
+                <SelectField field="Risk Sum" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="486" y="468.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Risk Sum]+[Right_Risk Level]" field="Risk Sum" size="8" type="Int64" />
+                <FormulaField expression="[Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" field="Path" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Risk Sum = [Risk Sum]+[Right_Risk Level]
+Path = [Path]+[Right_Tuple]+ToString([R...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+                <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Left" order="" />
+                <Field field="Y" order="" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="329" y="139.9999" width="385" height="137" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 36</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="354" y="192.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Up" />
+                <Field field="X" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Y" />
+                <Field field="X" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Risk Level" selected="True" rename="Right_Risk Level" input="Right_" />
+                    <SelectField field="Right_Y" selected="True" rename="Right_Y" input="Right_" />
+                    <SelectField field="Right_X" selected="True" rename="Right_X" input="Right_" />
+                    <SelectField field="Right_Tuple" selected="True" rename="Right_Tuple" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="Up" />
+                <Field field="X" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Join">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+                <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Up" order="" />
+                <Field field="X" order="" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="Y" />
+                <Field field="X" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="630" y="192.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Risk Level" selected="False" />
+                <SelectField field="Y" selected="False" />
+                <SelectField field="X" selected="False" />
+                <SelectField field="Tuple" selected="False" />
+                <SelectField field="Up" selected="False" />
+                <SelectField field="Down" selected="False" />
+                <SelectField field="Left" selected="False" />
+                <SelectField field="Right" selected="False" />
+                <SelectField field="Right_Risk Level" selected="True" rename="Risk Level" />
+                <SelectField field="Right_Y" selected="True" rename="Y" />
+                <SelectField field="Right_X" selected="True" rename="X" />
+                <SelectField field="Right_Tuple" selected="True" rename="Tuple" />
+                <SelectField field="Path" selected="True" />
+                <SelectField field="Risk Sum" selected="True" />
+                <SelectField field="Min Current Path" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="486" y="192.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Risk Sum]+[Right_Risk Level]" field="Risk Sum" size="8" type="Int64" />
+                <FormulaField expression="[Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" field="Path" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>Risk Sum = [Risk Sum]+[Right_Risk Level]
+Path = [Path]+[Right_Tuple]+ToString([R...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+                <Field name="Path" size="1073741823" source="Formula: [Path]+[Right_Tuple]+ToString([Risk Sum],0)+&quot;)&quot;" type="V_WString" />
+                <Field name="Risk Sum" source="Formula: [Risk Sum]+[Right_Risk Level]" type="Int64" />
+                <Field name="Min Current Path" source="Formula: IF IsNull([Source_Min Current Path]) THEN [Min Current Path] ELSE [Source_Min Current Path] ENDIF" type="Int64" />
+                <Field name="Up" source="Formula: [Y]-1" type="Int64" />
+                <Field name="Down" source="Formula: [Y]+1" type="Int64" />
+                <Field name="Left" source="Formula: [X]-1" type="Int64" />
+                <Field name="Right" source="Formula: [X]+1" type="Int64" />
+                <Field name="Right_Risk Level" source="File: C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day15-Sample.csv" type="Int64" />
+                <Field name="Right_Y" source="RecordID: Starting Value=1" type="Int32" />
+                <Field description="Formula: [Row-1:X]+1" name="Right_X" source="Formula: [Row-1:X]+1" type="Int32" />
+                <Field name="Right_Tuple" size="1073741823" source="Formula: &quot;(&quot;+ToString([X], 0)+&quot;,&quot;+ToString([Y], 0)+&quot;,&quot;+ToString([Risk Level], 0)+&quot;,&quot;" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Up" order="" />
+                <Field field="X" order="" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="True" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="46" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="46" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="52" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Unique" />
+      <Destination ToolID="52" Connection="Left" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="31" Connection="Question" />
+      <Destination ToolID="32" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="31" Connection="Question" />
+      <Destination ToolID="33" Connection="Question" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="32" Connection="Action" />
+      <Destination ToolID="22" Connection="Action" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="33" Connection="Action" />
+      <Destination ToolID="22" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Right" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="True" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="True" />
+      <Destination ToolID="28" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="False" />
+      <Destination ToolID="29" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (23)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (24)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (31)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day15-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="32" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>1234</ReplaceText>
+              <Destination>22/Expression</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="33" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>10</ReplaceText>
+              <Destination>22/Expression</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (23)</Description>
+              <Name>Macro Output (23)</Name>
+              <ToolId value="23" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (24)</Description>
+              <Name>Macro Output (24)</Name>
+              <ToolId value="24" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Final Position</Description>
+              <Name>Numeric Up Down (31)</Name>
+              <ToolId value="31" />
+              <Minimum value="0" />
+              <Maximum value="5000" />
+              <Increment value="1" />
+              <Default value="10" />
+              <Decimals value="0" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Iterative Input</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="5000" />
+        <LimitBehavior>Warn</LimitBehavior>
+        <OutputMode>AutoByName</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="24" Selected="True" />
+        <Tool ToolId="23" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
