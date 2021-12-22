@@ -1,0 +1,1106 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="126" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day18-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2214" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2214" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2154" y="354" width="178.5791" height="28" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 48</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2179" y="407" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput2.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Day18-MacroInput2.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="258" y="486" width="178.5791" height="28" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 24</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="283" y="623" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput3.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Day18-MacroInput3.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings>
+            <Position x="283" y="539" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>Day18-Macro4 (21)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Final Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Iterative output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Day18-Macro4.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="257" y="61" width="1777" height="388" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 20</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="942" y="114.0003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>//[RecordID]=[Min_RecordID]||[RecordID]=[Min_RecordID]+1
+[RecordID]=[Min_RecordID]||[RecordID]=[Min_RecordID]+1</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-18 17:07:42</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2021-12-18 17:07:42</StartDate>
+                  <EndDate>2021-12-18 17:07:42</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>//[RecordID]=[Min_RecordID]||[RecordID]=[Min_RecordID]+1
+[RecordID]=[Min_RecordI...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="282" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="Min" rename="Min_RecordID" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="414" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1062" y="198.0002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="Max" rename="Max_RecordID" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Max_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="1158" y="114.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Max_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1266" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Depth]+1" field="Depth" size="8" type="Int64" />
+                <FormulaField expression="IF IsNull([Parent Group ID]) THEN &#xA;	IF [RecordID]=[Min_RecordID] THEN ToString([Engine.IterationNumber],0)+&quot;L&quot; ELSE ToString([Engine.IterationNumber],0)+&quot;R&quot; ENDIF &#xA;ELSE [Parent Group ID] ENDIF&#xA;//IF IsNull([Parent Group ID]) THEN &#xA;//	IF [RecordID]=[Min_RecordID] THEN ToString(1,0)+&quot;L&quot; ELSE ToString(1,0)+&quot;R&quot; ENDIF &#xA;//ELSE [Parent Group ID] ENDIF" field="Parent Group ID" size="1073741823" type="V_WString" />
+                <FormulaField expression="[Max_RecordID]" field="RecordID" size="4" type="Int32" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Depth = [Depth]+1
+Parent Group ID = IF IsNull([Parent Group ID]) THEN 
+	IF [Reco...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="Formula: [Max_RecordID]" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsNull([Parent Group ID]) THEN &#xA; IF [RecordID]=[Min_RecordID] THEN ToString([Engine.IterationNumber],0)+&quot;L&quot; ELSE ToString([Engine.IterationNumber],0)+&quot;R&quot; ENDIF &#xA;ELSE [Parent Group ID] ENDIF&#xA;//IF IsNull([Parent Group ID]) THEN &#xA;// IF [RecordID]=[Min_RecordID] THEN ToString(1,0)+&quot;L&quot; ELSE ToString(1,0)+&quot;R&quot; ENDIF &#xA;//ELSE [Parent Group ID] ENDIF" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Max_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1398" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Min_RecordID" selected="False" />
+                <SelectField field="Max_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="Formula: [Max_RecordID]" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsNull([Parent Group ID]) THEN &#xA; IF [RecordID]=[Min_RecordID] THEN ToString([Engine.IterationNumber],0)+&quot;L&quot; ELSE ToString([Engine.IterationNumber],0)+&quot;R&quot; ENDIF &#xA;ELSE [Parent Group ID] ENDIF&#xA;//IF IsNull([Parent Group ID]) THEN &#xA;// IF [RecordID]=[Min_RecordID] THEN ToString(1,0)+&quot;L&quot; ELSE ToString(1,0)+&quot;R&quot; ENDIF &#xA;//ELSE [Parent Group ID] ENDIF" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1266" y="257.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Max_RecordID]" field="RecordID" size="1073741823" type="V_WString" />
+                <FormulaField expression="0" field="Depth" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;[&quot;" field="First Char" size="1073741823" type="V_WString" />
+                <FormulaField expression="Null()" field="Parent Group ID" size="1073741823" type="V_WString" />
+                <FormulaField expression="[Engine.IterationNumber]&#xA;//1" field="Group ID" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>RecordID = [Max_RecordID]
+Depth = 0
+First Char = "["
+Parent Group ID = Null()
+Gr...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Max_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: 0" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: &quot;[&quot;" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: Null()" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: [Engine.IterationNumber]&#xA;//1" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1398" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Max_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: 0" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: &quot;[&quot;" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: Null()" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: [Engine.IterationNumber]&#xA;//1" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1542" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1950" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="RecordID" selected="True" type="Int64" size="8" />
+                <SelectField field="Depth" selected="True" type="Int64" size="8" />
+                <SelectField field="CountDistinct_RecordID" selected="False" />
+                <SelectField field="Min_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int64" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1950" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="RecordID" selected="True" type="Int64" size="8" />
+                <SelectField field="Depth" selected="True" type="Int64" size="8" />
+                <SelectField field="Min_RecordID" selected="False" />
+                <SelectField field="CountDistinct_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="(Multiple Sources)" type="Int64" />
+                <Field name="Depth" source="Formula: (Multiple Sources)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="485.9996" y="258.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="RecordID" action="CountDistinct" rename="CountDistinct_RecordID" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="CountDistinct_RecordID" source="Summarize: CountDistinct - RecordID" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="570" y="197.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Error</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="CountDistinct_RecordID" source="Summarize: CountDistinct - RecordID" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="666" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[CountDistinct_RecordID] = 1</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>CountDistinct_RecordID</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-12-18 21:28:10</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>1</Operand>
+                  <StartDate>2021-12-18 21:28:10</StartDate>
+                  <EndDate>2021-12-18 21:28:10</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[CountDistinct_RecordID] = 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="CountDistinct_RecordID" source="Summarize: CountDistinct - RecordID" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="CountDistinct_RecordID" source="Summarize: CountDistinct - RecordID" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1794" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="True" />
+              <OutputOrder>
+                <Connection>#1</Connection>
+                <Connection>#2</Connection>
+              </OutputOrder>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="798" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="CountDistinct_RecordID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+                <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro)" type="Int64" />
+                <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro)" type="V_WString" />
+                <Field name="Min_RecordID" source="RecordID: Starting Value=1 (BatchMacro)" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="1602" y="330" width="178.5791" height="28" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 42</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="41">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+                <Position x="1627" y="383" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <File FileFormat="19" MaxRecords="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput3.yxdb</File>
+                  <Passwords />
+                  <FormatSpecificOptions>
+                    <NoSpatialIndex>False</NoSpatialIndex>
+                    <SaveSource>True</SaveSource>
+                  </FormatSpecificOptions>
+                  <MultiFile value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Day18-MacroInput3.yxdb</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings>
+            <Position x="1686" y="222.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>Day18-Macro4 (15)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Final Output">
+              <RecordInfo>
+                <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID] (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Iterative output">
+              <RecordInfo>
+                <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+                <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Day18-Macro4.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="49" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="7" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Source" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="50" Connection="Final Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="38" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="50" Connection="Input1" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="True" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="False" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (25)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (31)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day18-Macro3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (25)</Description>
+              <Name>Macro Output (25)</Name>
+              <ToolId value="25" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (31)</Description>
+              <Name>Macro Output (31)</Name>
+              <ToolId value="31" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input1</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="159" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="18" Selected="True" />
+        <Tool ToolId="50" Selected="True" />
+        <Tool ToolId="25" Selected="True" />
+        <Tool ToolId="31" Selected="True" />
+        <Tool ToolId="41" Selected="True" />
+        <Tool ToolId="47" Selected="True" />
+        <Tool ToolId="49" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

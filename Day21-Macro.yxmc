@@ -1,0 +1,817 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="210" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day21-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day21-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="TextInput:" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="3" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 3
+Num Universes = [Num Universes]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]" type="Int64" />
+            <Field name="Roll" source="Formula: 3" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="4" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]*3" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 4
+Num Universes = [Num Universes]*3
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]*3" type="Int64" />
+            <Field name="Roll" source="Formula: 4" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="5" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]*6" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 5
+Num Universes = [Num Universes]*6
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]*6" type="Int64" />
+            <Field name="Roll" source="Formula: 5" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="352" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="6" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]*7" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 6
+Num Universes = [Num Universes]*7
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]*7" type="Int64" />
+            <Field name="Roll" source="Formula: 6" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="9" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 9
+Num Universes = [Num Universes]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]" type="Int64" />
+            <Field name="Roll" source="Formula: 9" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="8" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]*3" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 8
+Num Universes = [Num Universes]*3
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]*3" type="Int64" />
+            <Field name="Roll" source="Formula: 8" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="7" field="Roll" size="2" type="Int16" />
+            <FormulaField expression="[Num Universes]*6" field="Num Universes" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Roll = 7
+Num Universes = [Num Universes]*6
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: [Num Universes]*6" type="Int64" />
+            <Field name="Roll" source="Formula: 7" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="494" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Score" source="TextInput:" type="Int16" />
+            <Field name="Player 1 Position" source="TextInput:" type="Int16" />
+            <Field name="Player 2 Position" source="TextInput:" type="Int16" />
+            <Field name="Num Universes" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Roll" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="636" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Player]=1 &#xA;THEN &#xA;IF &#xA;    Mod([Roll]+[Player 1 Position],10)=0 &#xA;    THEN 10 &#xA;    ELSE Mod([Roll]+[Player 1 Position],10) &#xA;    ENDIF	&#xA;ELSE [Player 1 Position] ENDIF" field="Player 1 Position" size="2" type="Int16" />
+            <FormulaField expression="IF [Player]=2&#xA;THEN &#xA;IF &#xA;    Mod([Roll]+[Player 2 Position],10)=0 &#xA;    THEN 10 &#xA;    ELSE Mod([Roll]+[Player 2 Position],10) &#xA;    ENDIF	&#xA;ELSE [Player 2 Position] ENDIF" field="Player 2 Position" size="2" type="Int16" />
+            <FormulaField expression="IF [Player]=1 &#xA;THEN [Player 1 Score]+[Player 1 Position]&#xA;ELSE [Player 1 Score] ENDIF" field="Player 1 Score" size="2" type="Int16" />
+            <FormulaField expression="IF [Player]=2 &#xA;THEN [Player 2 Score]+[Player 2 Position]&#xA;ELSE [Player 2 Score] ENDIF" field="Player 2 Score" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Player 1 Position = IF [Player]=1 
+THEN 
+IF 
+    Mod([Roll]+[Player 1 Position],...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="TextInput:" type="Byte" />
+            <Field name="Player 1 Score" source="Formula: IF [Player]=1 &#xA;THEN [Player 1 Score]+[Player 1 Position]&#xA;ELSE [Player 1 Score] ENDIF" type="Int16" />
+            <Field name="Player 2 Score" source="Formula: IF [Player]=2 &#xA;THEN [Player 2 Score]+[Player 2 Position]&#xA;ELSE [Player 2 Score] ENDIF" type="Int16" />
+            <Field name="Player 1 Position" source="Formula: IF [Player]=1 &#xA;THEN &#xA;IF &#xA;    Mod([Roll]+[Player 1 Position],10)=0 &#xA;    THEN 10 &#xA;    ELSE Mod([Roll]+[Player 1 Position],10) &#xA;    ENDIF &#xA;ELSE [Player 1 Position] ENDIF" type="Int16" />
+            <Field name="Player 2 Position" source="Formula: IF [Player]=2&#xA;THEN &#xA;IF &#xA;    Mod([Roll]+[Player 2 Position],10)=0 &#xA;    THEN 10 &#xA;    ELSE Mod([Roll]+[Player 2 Position],10) &#xA;    ENDIF &#xA;ELSE [Player 2 Position] ENDIF" type="Int16" />
+            <Field name="Num Universes" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Roll" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="786" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Player" action="GroupBy" rename="Player" />
+            <SummarizeField field="Player 1 Score" action="GroupBy" rename="Player 1 Score" />
+            <SummarizeField field="Player 2 Score" action="GroupBy" rename="Player 2 Score" />
+            <SummarizeField field="Player 1 Position" action="GroupBy" rename="Player 1 Position" />
+            <SummarizeField field="Player 2 Position" action="GroupBy" rename="Player 2 Position" />
+            <SummarizeField field="Num Universes" action="Sum" rename="Num Universes" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="Summarize: GroupBy - Player" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Player" order="Asc" />
+            <Field field="Player 1 Score" order="Asc" />
+            <Field field="Player 2 Score" order="Asc" />
+            <Field field="Player 1 Position" order="Asc" />
+            <Field field="Player 2 Position" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="918" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Max([Player 1 Score], [Player 2 Score])" field="Max Score" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Max Score = Max([Player 1 Score], [Player 2 Score])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="Summarize: GroupBy - Player" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+            <Field name="Max Score" source="Formula: Max([Player 1 Score], [Player 2 Score])" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Player" order="Asc" />
+            <Field field="Player 1 Score" order="Asc" />
+            <Field field="Player 2 Score" order="Asc" />
+            <Field field="Player 1 Position" order="Asc" />
+            <Field field="Player 2 Position" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1050" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Max Score] &gt;= 21</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Max Score</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 14:25:46</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>21</Operand>
+              <StartDate>2021-12-21 14:25:46</StartDate>
+              <EndDate>2021-12-21 14:25:46</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Max Score] &gt;= 21</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player" source="Summarize: GroupBy - Player" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+            <Field name="Max Score" source="Formula: Max([Player 1 Score], [Player 2 Score])" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Player" order="Asc" />
+            <Field field="Player 1 Score" order="Asc" />
+            <Field field="Player 2 Score" order="Asc" />
+            <Field field="Player 1 Position" order="Asc" />
+            <Field field="Player 2 Position" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player" source="Summarize: GroupBy - Player" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+            <Field name="Max Score" source="Formula: Max([Player 1 Score], [Player 2 Score])" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Player" order="Asc" />
+            <Field field="Player 1 Score" order="Asc" />
+            <Field field="Player 2 Score" order="Asc" />
+            <Field field="Player 1 Position" order="Asc" />
+            <Field field="Player 2 Position" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1182" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="Summarize: GroupBy - Player" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+            <Field name="Max Score" source="Formula: Max([Player 1 Score], [Player 2 Score])" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Player" order="Asc" />
+            <Field field="Player 1 Score" order="Asc" />
+            <Field field="Player 2 Score" order="Asc" />
+            <Field field="Player 1 Position" order="Asc" />
+            <Field field="Player 2 Position" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1326" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1458" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1182" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Player]=1 THEN 2 ELSE 1 ENDIF" field="Player" size="1" type="Byte" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Player = IF [Player]=1 THEN 2 ELSE 1 ENDIF
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="Formula: IF [Player]=1 THEN 2 ELSE 1 ENDIF" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+            <Field name="Max Score" source="Formula: Max([Player 1 Score], [Player 2 Score])" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1326" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Max Score" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player" source="Formula: IF [Player]=1 THEN 2 ELSE 1 ENDIF" type="Byte" />
+            <Field name="Player 1 Score" source="Summarize: GroupBy - Player 1 Score" type="Int16" />
+            <Field name="Player 2 Score" source="Summarize: GroupBy - Player 2 Score" type="Int16" />
+            <Field name="Player 1 Position" source="Summarize: GroupBy - Player 1 Position" type="Int16" />
+            <Field name="Player 2 Position" source="Summarize: GroupBy - Player 2 Position" type="Int16" />
+            <Field name="Num Universes" source="Summarize: Sum - Num Universes" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#7">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="False" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day21-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (22)</Description>
+              <Name>Macro Output (22)</Name>
+              <ToolId value="22" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (24)</Description>
+              <Name>Macro Output (24)</Name>
+              <ToolId value="24" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input1</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="22" Selected="True" />
+        <Tool ToolId="24" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,2133 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="330" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Points Input</Name>
+          <Abbrev>P</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day19-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day19-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field name="up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="918" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Neighbours Found] = 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Neighbours Found</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 21:46:33</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-12-21 21:46:33</StartDate>
+              <EndDate>2021-12-21 21:46:33</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Neighbours Found] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="354" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Scanners and Rotations</Name>
+          <Abbrev>S</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day19-MacroInput2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day19-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1026" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1146" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[RecordID] = 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>RecordID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 21:47:40</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-21 21:47:40</StartDate>
+              <EndDate>2021-12-21 21:47:40</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RecordID] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1230" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1254" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1374" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1614" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Scanner Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Scanner Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Scanner Number" selected="True" rename="Right_Scanner Number" input="Right_" />
+                <SelectField field="Right_up" selected="True" rename="Right_up" input="Right_" />
+                <SelectField field="Right_rotation" selected="True" rename="Right_rotation" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Scanner Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Right_Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Right_up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Right_rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Scanner Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field name="up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Scanner Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1494" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Scanner Number" selected="False" rename="Right_Scanner Number" input="Right_" />
+                <SelectField field="Right_up" selected="False" rename="Right_up" input="Right_" />
+                <SelectField field="Right_rotation" selected="False" rename="Right_rotation" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Scanner Number" order="" />
+            <Field field="up" order="" />
+            <Field field="rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field name="up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1722" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Scanner Number" selected="True" rename="Test Scanner Number" input="Source_" />
+                <SelectField field="Source_x" selected="True" rename="Test x" input="Source_" />
+                <SelectField field="Source_y" selected="True" rename="Test y" input="Source_" />
+                <SelectField field="Source_z" selected="True" rename="Test z" input="Source_" />
+                <SelectField field="Source_up" selected="True" rename="Test up" input="Source_" />
+                <SelectField field="Source_rotation" selected="True" rename="Test rotation" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="Test x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Test y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Test z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1854" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Test x]-[x]" field="x offset" size="8" type="Int64" />
+            <FormulaField expression="[Test y]-[y]" field="y offset" size="8" type="Int64" />
+            <FormulaField expression="[Test z]-[z]" field="z offset" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[x offset = [Test x]-[x]
+y offset = [Test y]-[y]
+z offset = [Test z]-[z]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="Test x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Test y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Test z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2094" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="x" selected="True" rename="x ini" />
+            <SelectField field="y" selected="True" rename="y ini" />
+            <SelectField field="z" selected="True" rename="z ini" />
+            <SelectField field="Test x" selected="False" />
+            <SelectField field="Test y" selected="False" />
+            <SelectField field="Test z" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2214" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Scanner Number" selected="False" rename="Source_Scanner Number" input="Source_" />
+                <SelectField field="Source_Neighbours Found" selected="False" rename="Source_Neighbours Found" input="Source_" />
+                <SelectField field="Source_up" selected="False" rename="Source_up" input="Source_" />
+                <SelectField field="Source_rotation" selected="False" rename="Source_rotation" input="Source_" />
+                <SelectField field="Source_scanner x" selected="False" rename="Source_scanner x" input="Source_" />
+                <SelectField field="Source_scanner y" selected="False" rename="Source_scanner y" input="Source_" />
+                <SelectField field="Source_scanner z" selected="False" rename="Source_scanner z" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2322" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Test Scanner Number" />
+            <Field field="Test up" />
+            <Field field="Test rotation" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Scanner Number" selected="False" rename="Right_Scanner Number" input="Right_" />
+                <SelectField field="Right_x" selected="True" rename="Right_x" input="Right_" />
+                <SelectField field="Right_y" selected="True" rename="Right_y" input="Right_" />
+                <SelectField field="Right_z" selected="True" rename="Right_z" input="Right_" />
+                <SelectField field="Right_up" selected="False" rename="Right_up" input="Right_" />
+                <SelectField field="Right_rotation" selected="False" rename="Right_rotation" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Test Scanner Number" />
+            <Field field="Test up" />
+            <Field field="Test rotation" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="" />
+            <Field field="Test up" order="" />
+            <Field field="Test rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field name="up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Scanner Number" />
+            <Field field="up" />
+            <Field field="rotation" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2442" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[x]+[x offset]=[Right_x]
+&amp;&amp;[y]+[y offset]=[Right_y]
+&amp;&amp;[z]+[z offset]=[Right_z]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 22:11:34</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-21 22:11:34</StartDate>
+              <EndDate>2021-12-21 22:11:34</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[x]+[x offset]=[Right_x]
+&amp;&amp;[y]+[y offset]=[Right_y]
+&amp;&amp;[z]+[z offset]=[Right_z]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="" />
+            <Field field="Test up" order="" />
+            <Field field="Test rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="" />
+            <Field field="Test up" order="" />
+            <Field field="Test rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2586" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Test Scanner Number" action="GroupBy" rename="Test Scanner Number" />
+            <SummarizeField field="Test up" action="GroupBy" rename="Test up" />
+            <SummarizeField field="Test rotation" action="GroupBy" rename="Test rotation" />
+            <SummarizeField field="x ini" action="GroupBy" rename="x ini" />
+            <SummarizeField field="y ini" action="GroupBy" rename="y ini" />
+            <SummarizeField field="z ini" action="GroupBy" rename="z ini" />
+            <SummarizeField field="x offset" action="GroupBy" rename="x offset" />
+            <SummarizeField field="y offset" action="GroupBy" rename="y offset" />
+            <SummarizeField field="z offset" action="GroupBy" rename="z offset" />
+            <SummarizeField field="scanner x" action="GroupBy" rename="scanner x" />
+            <SummarizeField field="scanner y" action="GroupBy" rename="scanner y" />
+            <SummarizeField field="scanner z" action="GroupBy" rename="scanner z" />
+            <SummarizeField field="z offset" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="Test up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="Test rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="Summarize: GroupBy - x ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="Summarize: GroupBy - y ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="Summarize: GroupBy - z ini" type="Int64" />
+            <Field name="x offset" source="Summarize: GroupBy - x offset" type="Int64" />
+            <Field name="y offset" source="Summarize: GroupBy - y offset" type="Int64" />
+            <Field name="z offset" source="Summarize: GroupBy - z offset" type="Int64" />
+            <Field name="scanner x" source="Summarize: GroupBy - scanner x" type="Int64" />
+            <Field name="scanner y" source="Summarize: GroupBy - scanner y" type="Int64" />
+            <Field name="scanner z" source="Summarize: GroupBy - scanner z" type="Int64" />
+            <Field name="Count" source="Summarize: Count - z offset" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="Asc" />
+            <Field field="Test up" order="Asc" />
+            <Field field="Test rotation" order="Asc" />
+            <Field field="x ini" order="Asc" />
+            <Field field="y ini" order="Asc" />
+            <Field field="z ini" order="Asc" />
+            <Field field="x offset" order="Asc" />
+            <Field field="y offset" order="Asc" />
+            <Field field="z offset" order="Asc" />
+            <Field field="scanner x" order="Asc" />
+            <Field field="scanner y" order="Asc" />
+            <Field field="scanner z" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2718" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count] &gt;= 12</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 22:16:38</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>12</Operand>
+              <StartDate>2021-12-21 22:16:38</StartDate>
+              <EndDate>2021-12-21 22:16:38</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] &gt;= 12</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="Test up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="Test rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="Summarize: GroupBy - x ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="Summarize: GroupBy - y ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="Summarize: GroupBy - z ini" type="Int64" />
+            <Field name="x offset" source="Summarize: GroupBy - x offset" type="Int64" />
+            <Field name="y offset" source="Summarize: GroupBy - y offset" type="Int64" />
+            <Field name="z offset" source="Summarize: GroupBy - z offset" type="Int64" />
+            <Field name="scanner x" source="Summarize: GroupBy - scanner x" type="Int64" />
+            <Field name="scanner y" source="Summarize: GroupBy - scanner y" type="Int64" />
+            <Field name="scanner z" source="Summarize: GroupBy - scanner z" type="Int64" />
+            <Field name="Count" source="Summarize: Count - z offset" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="Asc" />
+            <Field field="Test up" order="Asc" />
+            <Field field="Test rotation" order="Asc" />
+            <Field field="x ini" order="Asc" />
+            <Field field="y ini" order="Asc" />
+            <Field field="z ini" order="Asc" />
+            <Field field="x offset" order="Asc" />
+            <Field field="y offset" order="Asc" />
+            <Field field="z offset" order="Asc" />
+            <Field field="scanner x" order="Asc" />
+            <Field field="scanner y" order="Asc" />
+            <Field field="scanner z" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="Test up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="Test rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="Summarize: GroupBy - x ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="Summarize: GroupBy - y ini" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="Summarize: GroupBy - z ini" type="Int64" />
+            <Field name="x offset" source="Summarize: GroupBy - x offset" type="Int64" />
+            <Field name="y offset" source="Summarize: GroupBy - y offset" type="Int64" />
+            <Field name="z offset" source="Summarize: GroupBy - z offset" type="Int64" />
+            <Field name="scanner x" source="Summarize: GroupBy - scanner x" type="Int64" />
+            <Field name="scanner y" source="Summarize: GroupBy - scanner y" type="Int64" />
+            <Field name="scanner z" source="Summarize: GroupBy - scanner z" type="Int64" />
+            <Field name="Count" source="Summarize: Count - z offset" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="Asc" />
+            <Field field="Test up" order="Asc" />
+            <Field field="Test rotation" order="Asc" />
+            <Field field="x ini" order="Asc" />
+            <Field field="y ini" order="Asc" />
+            <Field field="z ini" order="Asc" />
+            <Field field="x offset" order="Asc" />
+            <Field field="y offset" order="Asc" />
+            <Field field="z offset" order="Asc" />
+            <Field field="scanner x" order="Asc" />
+            <Field field="scanner y" order="Asc" />
+            <Field field="scanner z" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2970" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Test Scanner Number" action="GroupBy" rename="Test Scanner Number" />
+            <SummarizeField field="Test up" action="GroupBy" rename="Test up" />
+            <SummarizeField field="Test rotation" action="GroupBy" rename="Test rotation" />
+            <SummarizeField field="x offset" action="GroupBy" rename="x offset" />
+            <SummarizeField field="y offset" action="GroupBy" rename="y offset" />
+            <SummarizeField field="z offset" action="GroupBy" rename="z offset" />
+            <SummarizeField field="scanner x" action="GroupBy" rename="scanner x" />
+            <SummarizeField field="scanner y" action="GroupBy" rename="scanner y" />
+            <SummarizeField field="scanner z" action="GroupBy" rename="scanner z" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="Test up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="Test rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field name="x offset" source="Summarize: GroupBy - x offset" type="Int64" />
+            <Field name="y offset" source="Summarize: GroupBy - y offset" type="Int64" />
+            <Field name="z offset" source="Summarize: GroupBy - z offset" type="Int64" />
+            <Field name="scanner x" source="Summarize: GroupBy - scanner x" type="Int64" />
+            <Field name="scanner y" source="Summarize: GroupBy - scanner y" type="Int64" />
+            <Field name="scanner z" source="Summarize: GroupBy - scanner z" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="Asc" />
+            <Field field="Test up" order="Asc" />
+            <Field field="Test rotation" order="Asc" />
+            <Field field="x offset" order="Asc" />
+            <Field field="y offset" order="Asc" />
+            <Field field="z offset" order="Asc" />
+            <Field field="scanner x" order="Asc" />
+            <Field field="scanner y" order="Asc" />
+            <Field field="scanner z" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3066" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[scanner x]-[x offset]" field="scanner x" size="8" type="Int64" />
+            <FormulaField expression="[scanner y]-[y offset]" field="scanner y" size="8" type="Int64" />
+            <FormulaField expression="[scanner z]-[z offset]" field="scanner z" size="8" type="Int64" />
+            <FormulaField expression="0" field="Neighbours Found" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>scanner x = [scanner x]-[x offset]
+scanner y = [scanner y]-[y offset]
+scanner z ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="Test up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="Test rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field name="x offset" source="Summarize: GroupBy - x offset" type="Int64" />
+            <Field name="y offset" source="Summarize: GroupBy - y offset" type="Int64" />
+            <Field name="z offset" source="Summarize: GroupBy - z offset" type="Int64" />
+            <Field name="scanner x" source="Formula: [scanner x]-[x offset]" type="Int64" />
+            <Field name="scanner y" source="Formula: [scanner y]-[y offset]" type="Int64" />
+            <Field name="scanner z" source="Formula: [scanner z]-[z offset]" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="Formula: 0" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1374" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="1" field="Neighbours Found" size="1" type="Byte" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Neighbours Found = 1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="Formula: 1" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="3258" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3162" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Test Scanner Number" selected="True" rename="Scanner Number" />
+            <SelectField field="Test up" selected="True" rename="up" />
+            <SelectField field="Test rotation" selected="True" rename="rotation" />
+            <SelectField field="x offset" selected="False" />
+            <SelectField field="y offset" selected="False" />
+            <SelectField field="z offset" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Scanner Number" source="Summarize: GroupBy - Test Scanner Number" type="Byte" />
+            <Field name="up" source="Summarize: GroupBy - Test up" type="Byte" />
+            <Field name="rotation" source="Summarize: GroupBy - Test rotation" type="Byte" />
+            <Field name="scanner x" source="Formula: [scanner x]-[x offset]" type="Int64" />
+            <Field name="scanner y" source="Formula: [scanner y]-[y offset]" type="Int64" />
+            <Field name="scanner z" source="Formula: [scanner z]-[z offset]" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="Formula: 0" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="726" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[CountDistinct_Scanner Number] = [Count]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>CountDistinct_Scanner Number</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 22:28:04</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-21 22:28:04</StartDate>
+              <EndDate>2021-12-21 22:28:04</EndDate>
+              <Operand>
+              </Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[CountDistinct_Scanner Number] = [Count]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="CountDistinct_Scanner Number" source="Summarize: CountDistinct - Scanner Number" type="Int64" />
+            <Field name="Count" source="Summarize: Count - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="CountDistinct_Scanner Number" source="Summarize: CountDistinct - Scanner Number" type="Int64" />
+            <Field name="Count" source="Summarize: Count - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="474" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Scanner Number" action="CountDistinct" rename="CountDistinct_Scanner Number" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CountDistinct_Scanner Number" source="Summarize: CountDistinct - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="474" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Scanner Number" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Summarize: Count - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="546" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="CountDistinct_Scanner Number" source="Summarize: CountDistinct - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="630" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="CountDistinct_Scanner Number" source="Summarize: CountDistinct - Scanner Number" type="Int64" />
+            <Field name="Count" source="Summarize: Count - Scanner Number" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="918" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="822" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="CountDistinct_Scanner Number" selected="False" />
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="822" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="CountDistinct_Scanner Number" selected="False" />
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3642" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3546" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Scanner Number" selected="True" />
+            <SelectField field="Neighbours Found" selected="True" type="Byte" size="1" />
+            <SelectField field="up" selected="True" />
+            <SelectField field="rotation" selected="True" />
+            <SelectField field="scanner x" selected="True" />
+            <SelectField field="scanner y" selected="True" />
+            <SelectField field="scanner z" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Scanner Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="3642" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day19-MacroInput2.yxdb</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day19-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2814" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\wholbrook002\AppData\Local\Temp\Engine_17080_4b3a66aa32ce422fb0fa2e39d8068a8c_\Engine_12572_098ef0a8ed7846068e364d544dd89dab_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2442" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Test Scanner Number]=2</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 23:01:22</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-21 23:01:22</StartDate>
+              <EndDate>2021-12-21 23:01:22</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Test Scanner Number]=2</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="" />
+            <Field field="Test up" order="" />
+            <Field field="Test rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="Neighbours Found" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z ini" source="(Multiple Sources)" type="Int64" />
+            <Field description="Formula: IF IsNull([Row-1:Field_1])||IsEmpty([Row-1:Field_1]) THEN [Row-1:Scanner Number]+1 ELSE [Row-1:Scanner Number] ENDIF" name="Test Scanner Number" source="Formula: [Scanner Number]-1" type="Byte" />
+            <Field name="Test up" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Test rotation" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="x offset" source="Formula: [Test x]-[x]" type="Int64" />
+            <Field name="y offset" source="Formula: [Test y]-[y]" type="Int64" />
+            <Field name="z offset" source="Formula: [Test z]-[z]" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="z" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_x" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_y" source="(Multiple Sources)" type="Int64" />
+            <Field description="RegEx: Parsed from Field_1" name="Right_z" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Test Scanner Number" order="" />
+            <Field field="Test up" order="" />
+            <Field field="Test rotation" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2538" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\wholbrook002\AppData\Local\Temp\Engine_17080_4b3a66aa32ce422fb0fa2e39d8068a8c_\Engine_12572_a13ba99c2deb492cb90a51e3506f01de_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="3450" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Scanner Number" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Scanner Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Scanner Number" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="3354" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Scanner Number" order="Ascending" />
+            <Field field="Neighbours Found" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Scanner Number - Ascending
+Neighbours Found - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Scanner Number" source="(Multiple Sources)" type="Byte" />
+            <Field name="up" source="(Multiple Sources)" type="Byte" />
+            <Field name="rotation" source="(Multiple Sources)" type="Byte" />
+            <Field name="scanner x" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner y" source="(Multiple Sources)" type="Int64" />
+            <Field name="scanner z" source="(Multiple Sources)" type="Int64" />
+            <Field name="Neighbours Found" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Scanner Number" order="Ascending" />
+            <Field field="Neighbours Found" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="13" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="32" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="32" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="False" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Right" />
+      <Destination ToolID="12" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Right" />
+      <Destination ToolID="14" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="14" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Right" />
+      <Destination ToolID="20" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="20" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="18" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="True" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="False" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="False" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="True" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="33" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="True" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Unique" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day19-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (5)</Name>
+              <ToolId value="5" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (34)</Description>
+              <Name>Macro Output (34)</Name>
+              <ToolId value="34" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (37)</Description>
+              <Name>Macro Output (37)</Name>
+              <ToolId value="37" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Scanners and Rotations</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="5" Selected="True" />
+        <Tool ToolId="34" Selected="True" />
+        <Tool ToolId="37" Selected="True" />
+        <Tool ToolId="39" Selected="True" />
+        <Tool ToolId="40" Selected="False" />
+        <Tool ToolId="42" Selected="False" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,1145 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="246" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-Intermediate.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day18-Intermediate.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="510" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>REGEX_Match([First Char], "\d+")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 23:33:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-18 23:33:08</StartDate>
+              <EndDate>2021-12-18 23:33:08</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>REGEX_Match([First Char], "\d+")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="414" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="750" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Parent Group ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="L G ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_RecordID" selected="False" input="Left_" />
+                <SelectField field="Left_RecordID2" selected="False" input="Left_" />
+                <SelectField field="Left_Depth" selected="False" input="Left_" />
+                <SelectField field="Left_First Char" selected="True" rename="Left Char" input="Left_" />
+                <SelectField field="Left_Parent Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID" selected="True" rename="Left ID to Remove" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Group ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="L G ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="618" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Group ID]+&quot;L&quot;" field="L G ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Group ID]+&quot;R&quot;" field="R G ID" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[L G ID = [Group ID]+"L"
+R G ID = [Group ID]+"R"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="870" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="R G ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" input="Right_" />
+                <SelectField field="Right_RecordID2" selected="False" input="Right_" />
+                <SelectField field="Right_Depth" selected="False" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="False" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right ID to Remove" input="Right_" />
+                <SelectField field="Left_Right_RecordID" selected="False" input="Left_" />
+                <SelectField field="Left_Right_RecordID2" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Depth" selected="False" input="Left_" />
+                <SelectField field="Left_Right_First Char" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Parent Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Group ID" selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="R G ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="R G ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1014" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="3*ToNumber([Left Char])+2*ToNumber([Right Char])" field="First Char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First Char = 3*ToNumber([Left Char])+2*ToNumber([Right Char])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="L G ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="R G ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="R G ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1158" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="L G ID" selected="False" />
+            <SelectField field="R G ID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1278" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Left ID to Remove" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Left ID to Remove" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Left ID to Remove" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1386" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Right ID to Remove" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Right ID to Remove" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Right ID to Remove" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1494" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Group ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Left Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Left ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID2" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right ID to Remove" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: REGEX_Replace([Field_1], &quot;([\[,\]]|\d+).*?$&quot;, &quot;$1&quot;) (BatchMacro) (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1638" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1494" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Left Char" selected="False" />
+            <SelectField field="Left ID to Remove" selected="False" />
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="RecordID2" selected="True" rename="RecordID" />
+            <SelectField field="Right Char" selected="False" />
+            <SelectField field="Right ID to Remove" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: 3*ToNumber([Left Char])+2*ToNumber([Right Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings>
+        <Position x="1734" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1830" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1950" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count] = 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 23:47:41</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-18 23:47:41</StartDate>
+              <EndDate>2021-12-18 23:47:41</EndDate>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2070" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2202" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2070" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Depth" source="Formula: [Depth]+1 (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: IF IsEmpty([Parent Group ID]) THEN Null() ELSE ToString([RecordID],0)+&quot;+&quot;+[Parent Group ID] ENDIF (BatchMacro) (BatchMacro)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: ToString([RecordID],0)+&quot;+&quot;+[Group ID] (BatchMacro) (BatchMacro)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2202" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="10" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Right" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="12" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Right" />
+      <Destination ToolID="12" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="12" Connection="Right" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="16" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output9" />
+      <Destination ToolID="16" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="False" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day18-Macro5</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (19)</Description>
+              <Name>Macro Output (19)</Name>
+              <ToolId value="19" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (21)</Name>
+              <ToolId value="21" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input1</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="15" Selected="True" />
+        <Tool ToolId="19" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,2237 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="450" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Enhancement Map</Name>
+          <Abbrev>M</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day20-MacroInput.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day20-MacroInput.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Key" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="450" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Pixels</Name>
+          <Abbrev>P</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day20-MacroInput2.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day20-MacroInput2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="618" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Row Number" action="Min" rename="Min_Row Number" />
+            <SummarizeField field="Row Number" action="Max" rename="Max_Row Number" />
+            <SummarizeField field="Column Number" action="Min" rename="Min_Column Number" />
+            <SummarizeField field="Column Number" action="Max" rename="Max_Column Number" />
+            <SummarizeField field="Empty Value" action="First" rename="Empty Value" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="750" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>Row Number</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <Expression_Init>[Min_Row Number]-2</Expression_Init>
+          <Expression_Cond>[Row Number]&lt;=[Max_Row Number]+2</Expression_Cond>
+          <Expression_Loop>[Row Number]+1</Expression_Loop>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Min_Column Number]-2" field="Column Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Column Number = [Min_Column Number]-2
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" type="Int32" />
+            <Field name="Column Number" size="1073741823" source="Formula: [Min_Column Number]-2" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Min_Column Number]-1" field="Column Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Column Number = [Min_Column Number]-1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" type="Int32" />
+            <Field name="Column Number" size="1073741823" source="Formula: [Min_Column Number]-1" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Max_Column Number]+1" field="Column Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Column Number = [Max_Column Number]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" type="Int32" />
+            <Field name="Column Number" size="1073741823" source="Formula: [Max_Column Number]+1" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Max_Column Number]+2" field="Column Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Column Number = [Max_Column Number]+2
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" type="Int32" />
+            <Field name="Column Number" size="1073741823" source="Formula: [Max_Column Number]+2" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="750" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>Column Number</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <Expression_Init>[Min_Column Number]</Expression_Init>
+          <Expression_Cond>[Column Number]&lt;=[Max_Column Number]</Expression_Cond>
+          <Expression_Loop>[Column Number]+1</Expression_Loop>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Column Number" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Min_Row Number]-2" field="Row Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Row Number = [Min_Row Number]-2
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Column Number" type="Int32" />
+            <Field name="Row Number" size="1073741823" source="Formula: [Min_Row Number]-2" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="666" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Min_Row Number]-1" field="Row Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Row Number = [Min_Row Number]-1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Column Number" type="Int32" />
+            <Field name="Row Number" size="1073741823" source="Formula: [Min_Row Number]-1" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="726" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Max_Row Number]+1" field="Row Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Row Number = [Max_Row Number]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Column Number" type="Int32" />
+            <Field name="Row Number" size="1073741823" source="Formula: [Max_Row Number]+1" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Max_Row Number]+2" field="Row Number" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Row Number = [Max_Row Number]+2
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Column Number" type="Int32" />
+            <Field name="Row Number" size="1073741823" source="Formula: [Max_Row Number]+2" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1062" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Column Number" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1182" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Empty Value]" field="Value" size="1" type="Byte" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Value = [Empty Value]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Min_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Max_Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Min_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Max_Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+            <Field name="Row Number" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Column Number" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Value" source="Formula: [Empty Value]" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1302" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Min_Row Number" selected="False" />
+            <SelectField field="Max_Row Number" selected="False" />
+            <SelectField field="Min_Column Number" selected="False" />
+            <SelectField field="Max_Column Number" selected="False" />
+            <SelectField field="Empty Value" selected="False" />
+            <SelectField field="Row Number" selected="True" type="Int64" size="8" />
+            <SelectField field="Column Number" selected="True" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: [Empty Value]" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1422" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1542" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Row Number]-1" field="Row Above" size="8" type="Int64" />
+            <FormulaField expression="[Row Number]+1" field="Row Below" size="8" type="Int64" />
+            <FormulaField expression="[Column Number]-1" field="Column Left" size="8" type="Int64" />
+            <FormulaField expression="[Column Number]+1" field="Column Right" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Row Above = [Row Number]-1
+Row Below = [Row Number]+1
+Column Left = [Column Numb...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Above" />
+            <Field field="Column Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Top Left" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Above" />
+            <Field field="Column Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Left" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Above" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Top Middle" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Above" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Middle" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Above" />
+            <Field field="Column Right" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Top Right" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Above" source="Formula: [Row Number]-1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Above" />
+            <Field field="Column Right" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Right" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Middle Left" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Left" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Number" />
+            <Field field="Column Right" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Middle Right" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Right" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Right" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Below" />
+            <Field field="Column Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Bottom Left" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Left" source="Formula: [Column Number]-1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Below" />
+            <Field field="Column Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Left" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="738" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Below" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Bottom Middle" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Below" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Middle" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1662" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Row Below" />
+            <Field field="Column Right" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Row Above" selected="False" input="Left_" />
+                <SelectField field="Left_Row Below" selected="False" input="Left_" />
+                <SelectField field="Left_Column Left" selected="False" input="Left_" />
+                <SelectField field="Left_Column Right" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" rename="Right_Row Number" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" rename="Right_Column Number" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Bottom Right" input="Right_" />
+                <SelectField field="Right_Row Above" selected="False" rename="Right_Row Above" input="Right_" />
+                <SelectField field="Right_Row Below" selected="False" rename="Right_Row Below" input="Right_" />
+                <SelectField field="Right_Column Left" selected="False" rename="Right_Column Left" input="Right_" />
+                <SelectField field="Right_Column Right" selected="False" rename="Right_Column Right" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Row Below" source="Formula: [Row Number]+1" type="Int64" />
+            <Field name="Column Right" source="Formula: [Column Number]+1" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Below" />
+            <Field field="Column Right" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Right" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Row Number" />
+            <Field field="Column Number" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
+        <Position x="1818" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JoinByRecPos value="False" />
+          <JoinFields>
+            <JoinInfo connection="#1">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#2">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#3">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#4">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#5">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#6">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#7">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+            <JoinInfo connection="#8">
+              <Field field="Row Number" />
+              <Field field="Column Number" />
+              <Field field="Value" />
+            </JoinInfo>
+          </JoinFields>
+          <CartesianMode>Allow</CartesianMode>
+          <OutputJoinOnly value="True" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Input_#2_Row Number" selected="False" rename="Input_#2_Row Number" />
+                <SelectField field="Input_#2_Column Number" selected="False" rename="Input_#2_Column Number" />
+                <SelectField field="Input_#2_Value" selected="False" rename="Input_#2_Value" />
+                <SelectField field="Input_#3_Row Number" selected="False" rename="Input_#3_Row Number" />
+                <SelectField field="Input_#3_Column Number" selected="False" rename="Input_#3_Column Number" />
+                <SelectField field="Input_#3_Value" selected="False" rename="Input_#3_Value" />
+                <SelectField field="Input_#4_Row Number" selected="False" rename="Input_#4_Row Number" />
+                <SelectField field="Input_#4_Column Number" selected="False" rename="Input_#4_Column Number" />
+                <SelectField field="Input_#4_Value" selected="False" rename="Input_#4_Value" />
+                <SelectField field="Input_#5_Row Number" selected="False" rename="Input_#5_Row Number" />
+                <SelectField field="Input_#5_Column Number" selected="False" rename="Input_#5_Column Number" />
+                <SelectField field="Input_#5_Value" selected="False" rename="Input_#5_Value" />
+                <SelectField field="Input_#6_Row Number" selected="False" rename="Input_#6_Row Number" />
+                <SelectField field="Input_#6_Column Number" selected="False" rename="Input_#6_Column Number" />
+                <SelectField field="Input_#6_Value" selected="False" rename="Input_#6_Value" />
+                <SelectField field="Input_#7_Row Number" selected="False" rename="Input_#7_Row Number" />
+                <SelectField field="Input_#7_Column Number" selected="False" rename="Input_#7_Column Number" />
+                <SelectField field="Input_#7_Value" selected="False" rename="Input_#7_Value" />
+                <SelectField field="Input_#8_Row Number" selected="False" rename="Input_#8_Row Number" />
+                <SelectField field="Input_#8_Column Number" selected="False" rename="Input_#8_Column Number" />
+                <SelectField field="Input_#8_Value" selected="False" rename="Input_#8_Value" />
+                <SelectField field="Input_#5_Middle Left" selected="True" rename="Input_#5_Middle Left" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Middle" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Right" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Right" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Middle" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Right" source="Formula: (Multiple Sources)" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+            <Field field="Value" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoinMultiple" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1938" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="POW(2, 8)*[Top Left]+&#xA;POW(2, 7)*[Top Middle]+&#xA;POW(2, 6)*[Top Right]+&#xA;POW(2, 5)*[Middle Left]+&#xA;POW(2, 4)*[Value]+&#xA;POW(2, 3)*[Middle Right]+&#xA;POW(2, 2)*[Bottom Left]+&#xA;POW(2, 1)*[Bottom Middle]+&#xA;POW(2, 0)*[Bottom Right]" field="Key" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Key = POW(2, 8)*[Top Left]+
+POW(2, 7)*[Top Middle]+
+POW(2, 6)*[Top Right]+
+POW(2...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Middle" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Top Right" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Middle Right" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Left" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Middle" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Bottom Right" source="Formula: (Multiple Sources)" type="Byte" />
+            <Field name="Key" source="Formula: POW(2, 8)*[Top Left]+&#xA;POW(2, 7)*[Top Middle]+&#xA;POW(2, 6)*[Top Right]+&#xA;POW(2, 5)*[Middle Left]+&#xA;POW(2, 4)*[Value]+&#xA;POW(2, 3)*[Middle Right]+&#xA;POW(2, 2)*[Bottom Left]+&#xA;POW(2, 1)*[Bottom Middle]+&#xA;POW(2, 0)*[Bottom Right]" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+            <Field field="Value" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2058" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Row Number" selected="True" />
+            <SelectField field="Column Number" selected="True" />
+            <SelectField field="Key" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Key" source="Formula: POW(2, 8)*[Top Left]+&#xA;POW(2, 7)*[Top Middle]+&#xA;POW(2, 6)*[Top Right]+&#xA;POW(2, 5)*[Middle Left]+&#xA;POW(2, 4)*[Value]+&#xA;POW(2, 3)*[Middle Right]+&#xA;POW(2, 2)*[Bottom Left]+&#xA;POW(2, 1)*[Bottom Middle]+&#xA;POW(2, 0)*[Bottom Right]" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Row Number" order="" />
+            <Field field="Column Number" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2190" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Key" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Key" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Key" selected="False" input="Left_" />
+                <SelectField field="Right_Key" selected="False" rename="Right_Key" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Key" source="Formula: POW(2, 8)*[Top Left]+&#xA;POW(2, 7)*[Top Middle]+&#xA;POW(2, 6)*[Top Right]+&#xA;POW(2, 5)*[Middle Left]+&#xA;POW(2, 4)*[Value]+&#xA;POW(2, 3)*[Middle Right]+&#xA;POW(2, 2)*[Bottom Left]+&#xA;POW(2, 1)*[Bottom Middle]+&#xA;POW(2, 0)*[Bottom Right]" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Key" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Key" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Key" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="2490" y="414" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2490" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Engine.IterationNumber]+1 = 2</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-21 10:59:43</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-21 10:59:43</StartDate>
+              <EndDate>2021-12-21 10:59:43</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Engine.IterationNumber]+1 = 2</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Row Number" order="Ascending" />
+            <Field field="Column Number" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Row Number" order="Ascending" />
+            <Field field="Column Number" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="2490" y="498" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2622" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2622" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative Output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2394" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Row Number" order="Ascending" />
+            <Field field="Column Number" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Row Number - Ascending
+Column Number - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Row Number" order="Ascending" />
+            <Field field="Column Number" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1182" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Empty Value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="1182" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="2" />
+          <Fields>
+            <Field name="Key" />
+            <Field name="Default Value" />
+          </Fields>
+          <Data>
+            <r>
+              <c>0</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>511</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Key" source="TextInput:" type="Int16" />
+            <Field name="Default Value" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1314" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Default Value" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Empty Value" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Default Value" selected="False" input="Left_" />
+                <SelectField field="Right_Row Number" selected="False" input="Right_" />
+                <SelectField field="Right_Column Number" selected="False" input="Right_" />
+                <SelectField field="Right_Value" selected="False" input="Right_" />
+                <SelectField field="Right_Empty Value" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Key" source="TextInput:" type="Int16" />
+            <Field name="Default Value" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Default Value" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Key" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Empty Value" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1446" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Key" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Key" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Key" selected="False" input="Left_" />
+                <SelectField field="Right_Key" selected="False" rename="Right_Key" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Key" source="RecordID: Starting Value=0" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Key" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Key" source="TextInput:" type="Int16" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Key" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1182" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="RecordID: Starting Value=1" type="Int32" />
+            <Field description="Formula: [Row-1:Column Number]+1" name="Column Number" source="Formula: [Row-1:Column Number]+1" type="Int32" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: 0" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2298" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Value" selected="True" rename="Empty Value" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Row Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Column Number" source="(Multiple Sources)" type="Int64" />
+            <Field name="Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+            <Field name="Empty Value" source="Formula: IF [Field_1]=&quot;#&quot; THEN 1 ELSE 0 ENDIF" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="33" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="47" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Join" />
+      <Destination ToolID="47" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#7">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#8">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="23" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="23" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="24" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="24" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="26" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="26" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="28" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="28" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="21" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="22" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="23" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="24" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="26" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#7">
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection name="#8">
+      <Origin ToolID="28" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Join" />
+      <Destination ToolID="49" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Join" />
+      <Destination ToolID="49" Connection="Source" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="38" Connection="Question" />
+      <Destination ToolID="40" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="True" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="False" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="40" Connection="Action" />
+      <Destination ToolID="39" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="46" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (38)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (41)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (42)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day20-Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="40" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>2</ReplaceText>
+              <Destination>39/Expression</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Num Iterations</Description>
+              <Name>Numeric Up Down (38)</Name>
+              <ToolId value="38" />
+              <Minimum value="1" />
+              <Maximum value="5000000" />
+              <Increment value="1" />
+              <Default value="50" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (41)</Description>
+              <Name>Macro Output (41)</Name>
+              <ToolId value="41" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (42)</Description>
+              <Name>Macro Output (42)</Name>
+              <ToolId value="42" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Pixels</Input>
+        <Output>Iterative Output</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="41" Selected="True" />
+        <Tool ToolId="42" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

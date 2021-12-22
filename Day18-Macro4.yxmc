@@ -1,0 +1,3201 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="354" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input1</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput3.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day18-MacroInput3.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="930" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Group ID]+&quot;L&quot;" field="Group ID L" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Group ID]+&quot;R&quot;" field="Group ID R" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Group ID L = [Group ID]+"L"
+Group ID R = [Group ID]+"R"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1050" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Group ID L" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Digit Order" selected="False" input="Left_" />
+                <SelectField field="Right_Digit Order" selected="True" rename="L Number Pos" input="Right_" />
+                <SelectField field="Right_Most Left" selected="True" rename="ID To Remove L" input="Right_" />
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="False" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="L First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="False" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="False" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="False" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="False" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="Left_Number Pos" selected="False" input="Left_" />
+                <SelectField field="Right_Number Pos" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID L" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID L" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1206" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Group ID R" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Parent Group ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Digit Order" selected="True" rename="R Number Pos" input="Right_" />
+                <SelectField field="Right_Most Left" selected="True" rename="ID To Remove R" input="Right_" />
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="False" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="R First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="False" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="False" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="False" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="False" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="Right_Number Pos" selected="False" input="Right_" />
+                <SelectField field="Left_Right_Number Pos" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Depth" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Parent Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Group ID L" selected="False" input="Left_" />
+                <SelectField field="Left_Right_Group ID R" selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Group ID R" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID R" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Parent Group ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1326" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([L Number Pos])&amp;&amp;!IsNull([R Number Pos])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 19:55:18</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-18 19:55:18</StartDate>
+              <EndDate>2021-12-18 19:55:18</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([L Number Pos])&amp;&amp;!IsNull([R Number Pos])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID R" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID R" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="522" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>Most Left</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1518" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Most Left - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1614" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings>
+        <Position x="1806" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="618" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!REGEX_Match([First Char], "\d+")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:04:45</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-18 20:04:45</StartDate>
+              <EndDate>2021-12-18 20:04:45</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!REGEX_Match([First Char], "\d+")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="726" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>Digit Order</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="822" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1806" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="L Number Pos" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Digit Order" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Most Left" selected="False" input="Left_" />
+                <SelectField field="Left_RecordID" selected="False" input="Left_" />
+                <SelectField field="Left_Depth" selected="False" input="Left_" />
+                <SelectField field="Left_First Char" selected="False" input="Left_" />
+                <SelectField field="Left_Parent Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID L" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID R" selected="False" input="Left_" />
+                <SelectField field="Left_L Number Pos" selected="False" input="Left_" />
+                <SelectField field="Left_ID To Remove L" selected="False" input="Left_" />
+                <SelectField field="Left_R Number Pos" selected="False" input="Left_" />
+                <SelectField field="Left_ID To Remove R" selected="False" input="Left_" />
+                <SelectField field="Left_R First Char" selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="L Number Pos" source="Formula: [L Number Pos]-1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="L Number Pos" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Digit Order" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1710" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[L Number Pos]-1" field="L Number Pos" size="4" type="Int32" />
+            <FormulaField expression="[R Number Pos]+1" field="R Number Pos" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[L Number Pos = [L Number Pos]-1
+R Number Pos = [R Number Pos]+1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="Formula: [L Number Pos]-1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="Formula: [R Number Pos]+1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1914" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber([First Char])+ToNumber([L First Char])" field="First Char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First Char = ToNumber([First Char])+ToNumber([L First Char])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([L First Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1806" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="R Number Pos" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Digit Order" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Most Left" selected="False" input="Left_" />
+                <SelectField field="Left_RecordID" selected="False" rename="ID To Remove" input="Left_" />
+                <SelectField field="Left_Depth" selected="False" input="Left_" />
+                <SelectField field="Left_First Char" selected="False" input="Left_" />
+                <SelectField field="Left_Parent Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID L" selected="False" input="Left_" />
+                <SelectField field="Left_Group ID R" selected="False" input="Left_" />
+                <SelectField field="Left_L Number Pos" selected="False" input="Left_" />
+                <SelectField field="Left_ID To Remove L" selected="False" input="Left_" />
+                <SelectField field="Left_L First Char" selected="False" input="Left_" />
+                <SelectField field="Left_R Number Pos" selected="False" input="Left_" />
+                <SelectField field="Left_ID To Remove R" selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="R Number Pos" source="Formula: [R Number Pos]+1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="R Number Pos" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Digit Order" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1914" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber([First Char])+ToNumber([R First Char])" field="First Char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First Char = ToNumber([First Char])+ToNumber([R First Char])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([R First Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1998" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2118" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ID To Remove L" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="ID To Remove L" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2238" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ID To Remove R" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="ID To Remove R" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2358" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Digit Order" selected="True" rename="Right_Digit Order" input="Right_" />
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([L First Char])" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([L First Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2490" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Digit Order" selected="True" rename="Right_Digit Order" input="Right_" />
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([R First Char])" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: ToNumber([First Char])+ToNumber([R First Char])" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2646" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2778" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Most Left - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2898" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Digit Order" selected="False" />
+            <SelectField field="Most Left" selected="False" />
+            <SelectField field="Group ID L" selected="False" />
+            <SelectField field="Group ID R" selected="False" />
+            <SelectField field="L First Char" selected="False" />
+            <SelectField field="R First Char" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3126" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[R Count] = 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>R Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:45:45</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>1</Operand>
+              <StartDate>2021-12-18 20:45:45</StartDate>
+              <EndDate>2021-12-18 20:45:45</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[R Count] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="3006" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_Count" selected="True" rename="R Count" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3594" y="918" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Iterative output</Name>
+          <Abbrev>%</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1050" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1206" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count] != 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:29:24</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>1</Operand>
+              <StartDate>2021-12-18 20:29:24</StartDate>
+              <EndDate>2021-12-18 20:29:24</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Count] != 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3462" y="918" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="R Count" selected="False" />
+            <SelectField field="Digit Order" selected="False" />
+            <SelectField field="Most Left" selected="False" />
+            <SelectField field="Group ID L" selected="False" />
+            <SelectField field="Group ID R" selected="False" />
+            <SelectField field="L Count" selected="False" />
+            <SelectField field="Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1326" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([Digit Order])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Digit Order</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:31:33</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-18 20:31:33</StartDate>
+              <EndDate>2021-12-18 20:31:33</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Digit Order])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1458" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Most Left" selected="True" type="Double" size="8" />
+            <SelectField field="First Char" selected="True" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1686" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1914" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;[&quot;" field="First Char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First Char = "["
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: &quot;[&quot;" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1806" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="First Char" selected="True" type="V_WString" size="1073741823" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1806" y="966" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="FLOOR([First Char]/2)" field="First Char" size="8" type="Int64" />
+            <FormulaField expression="[Group ID]+&quot;L&quot;" field="Parent Group ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Group ID]+&quot;+1&quot;" field="Group ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Most Left]+0.1" field="Most Left" size="8" type="Double" />
+            <FormulaField expression="ToNumber([Depth])+1" field="Depth" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First Char = FLOOR([First Char]/2)
+Parent Group ID = [Group ID]+"L"
+Group ID = [...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="Formula: [Most Left]+0.1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: ToNumber([Depth])+1" type="V_WString" />
+            <Field name="First Char" source="Formula: FLOOR([First Char]/2)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: [Group ID]+&quot;+1&quot;" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1806" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="CEIL([First Char]/2)" field="First Char" size="8" type="Int64" />
+            <FormulaField expression="[Group ID]+&quot;R&quot;" field="Parent Group ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Group ID]+&quot;+2&quot;" field="Group ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Most Left]+0.2" field="Most Left" size="8" type="Double" />
+            <FormulaField expression="ToNumber([Depth])+1" field="Depth" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First Char = CEIL([First Char]/2)
+Parent Group ID = [Group ID]+"R"
+Group ID = [G...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="Formula: [Most Left]+0.2" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: ToNumber([Depth])+1" type="V_WString" />
+            <Field name="First Char" source="Formula: CEIL([First Char]/2)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: [Group ID]+&quot;+2&quot;" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2010" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Most Left" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Digit Order" selected="True" rename="Right_Digit Order" input="Right_" />
+                <SelectField field="Right_Most Left" selected="True" rename="Right_Most Left" input="Right_" />
+                <SelectField field="Right_RecordID" selected="True" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Depth" selected="True" rename="Right_Depth" input="Right_" />
+                <SelectField field="Right_First Char" selected="True" rename="Right_First Char" input="Right_" />
+                <SelectField field="Right_Parent Group ID" selected="True" rename="Right_Parent Group ID" input="Right_" />
+                <SelectField field="Right_Group ID" selected="True" rename="Right_Group ID" input="Right_" />
+                <SelectField field="Right_Group ID L" selected="True" rename="Right_Group ID L" input="Right_" />
+                <SelectField field="Right_Group ID R" selected="True" rename="Right_Group ID R" input="Right_" />
+                <SelectField field="Right_Count" selected="True" rename="Right_Count" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Right_Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Right_Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="Right_RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Right_Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_First Char" size="1073741823" source="Formula: &quot;[&quot;" type="V_WString" />
+            <Field name="Right_Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Right_Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Right_Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Right_Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: &quot;[&quot;" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Most Left" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2118" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2238" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Most Left - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings>
+        <Position x="1806" y="1302" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output9">
+          <RecordInfo>
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="CountRecords.yxmc" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2358" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Count" selected="False" input="Target_" />
+                <SelectField field="Source_Count" selected="True" rename="L Count" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2502" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[L Count] = 1</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>L Count</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:45:50</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>1</Operand>
+              <StartDate>2021-12-18 20:45:50</StartDate>
+              <EndDate>2021-12-18 20:45:50</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[L Count] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="3258" y="918" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="(Multiple Sources)" type="Double" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3786" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="R Count" selected="False" />
+            <SelectField field="Digit Order" selected="False" />
+            <SelectField field="Most Left" selected="False" />
+            <SelectField field="Group ID L" selected="False" />
+            <SelectField field="Group ID R" selected="False" />
+            <SelectField field="L Count" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3882" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Final Output</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1578" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[First Char] &gt; 9</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>First Char</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 20:32:49</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>9</Operand>
+              <StartDate>2021-12-18 20:32:49</StartDate>
+              <EndDate>2021-12-18 20:32:49</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[First Char] &gt; 9</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Digit Order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Double" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" source="Formula: (Multiple Sources)" type="Int64" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1914" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;0&quot;" field="First Char" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[First Char = "0"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: &quot;0&quot;" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="Formula: [L Number Pos]-1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="Formula: [R Number Pos]+1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2058" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Group ID L" selected="False" />
+            <SelectField field="Group ID R" selected="False" />
+            <SelectField field="L Number Pos" selected="False" />
+            <SelectField field="ID To Remove L" selected="False" />
+            <SelectField field="L First Char" selected="False" />
+            <SelectField field="R Number Pos" selected="False" />
+            <SelectField field="ID To Remove R" selected="False" />
+            <SelectField field="R First Char" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: &quot;0&quot;" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Most Left" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3354" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="Depth" selected="False" />
+            <SelectField field="First Char" selected="False" />
+            <SelectField field="Parent Group ID" selected="False" />
+            <SelectField field="Group ID" selected="False" />
+            <SelectField field="Digit Order" selected="False" />
+            <SelectField field="Most Left" selected="False" />
+            <SelectField field="Group ID L" selected="False" />
+            <SelectField field="Group ID R" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="3594" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3558" y="1026" width="178.5791" height="28" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 57</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3583" y="1079" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">C:\Users\wholbrook002\Documents\GithubRepos\Advent-Of-Code-2021-Alteryx\Day18-MacroInput3.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Day18-MacroInput3.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="3462" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3690" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([L Count])&amp;&amp;IsNull([R Count])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 21:14:16</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-18 21:14:16</StartDate>
+              <EndDate>2021-12-18 21:14:16</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsNull([L Count])&amp;&amp;IsNull([R Count])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Count" source="(Multiple Sources)" type="Int64" />
+            <Field name="L Count" source="(Multiple Sources)" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1422" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Depth] &gt;= "4"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Depth</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-18 21:18:30</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>4</Operand>
+              <StartDate>2021-12-18 21:18:30</StartDate>
+              <EndDate>2021-12-18 21:18:30</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Depth] &gt;= "4"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID R" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Most Left" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="RecordID" size="1073741823" source="Formula: [Max_RecordID]" type="V_WString" />
+            <Field name="Depth" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Parent Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Group ID L" size="1073741823" source="Formula: [Group ID]+&quot;L&quot;" type="V_WString" />
+            <Field name="Group ID R" size="1073741823" source="Formula: [Group ID]+&quot;R&quot;" type="V_WString" />
+            <Field name="L Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove L" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="L First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="R Number Pos" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ID To Remove R" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="R First Char" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Group ID R" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="60" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="60" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="32" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output9" />
+      <Destination ToolID="32" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input8" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="22" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Left" />
+      <Destination ToolID="22" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="23" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Left" />
+      <Destination ToolID="23" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output9" />
+      <Destination ToolID="30" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="30" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="False" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="24" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Left" />
+      <Destination ToolID="24" Connection="Left" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="25" Connection="Left" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Left" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="29" Connection="True" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="50" Connection="True" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="True" />
+      <Destination ToolID="45" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="45" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="True" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="48" Connection="Input8" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="45" Connection="Left" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="49" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output9" />
+      <Destination ToolID="49" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="True" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="True" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="True" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day18-Macro4</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (31)</Description>
+              <Name>Macro Output (31)</Name>
+              <ToolId value="31" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (54)</Description>
+              <Name>Macro Output (54)</Name>
+              <ToolId value="54" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input1</Input>
+        <Output>Iterative output</Output>
+        <IterationLimit value="1300" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="31" Selected="True" />
+        <Tool ToolId="48" Selected="True" />
+        <Tool ToolId="54" Selected="True" />
+        <Tool ToolId="55" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
